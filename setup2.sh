@@ -9,7 +9,9 @@ apt purge -y popularity-contest vim-common vim-tiny firefox-esr yelp im-config e
 
 apt autoremove --purge -y
 
-apt install -y nomacs plymouth plymouth-themes firefox thunderbird mpv qbittorrent gimp git libreoffice-writer libreoffice-impress libreoffice-calc libreoffice-gnome libreoffice-gtk3
+apt install -y plymouth plymouth-themes git flatpak
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 plymouth-set-default-theme -R spinner
 
