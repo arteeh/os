@@ -9,13 +9,7 @@ apt purge -y popularity-contest vim-common vim-tiny firefox-esr yelp im-config e
 
 apt autoremove --purge -y
 
-apt install -y plymouth plymouth-themes git flatpak
-
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-plymouth-set-default-theme -R spinner
-
 sudo gedit /etc/network/interfaces
 sudo gedit /etc/default/grub
 
-echo "Done!"
+flatpak install flathub org.gnome.Calculator org.gimp.GIMP io.github.celluloid_player.Celluloid org.gnome.eog org.libreoffice.LibreOffice org.qbittorrent.qBittorrent org.mozilla.Thunderbird

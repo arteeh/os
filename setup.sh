@@ -21,6 +21,10 @@ apt dist-upgrade -y
 apt autoremove --purge -y
 apt clean
 
-apt install -y firmware-linux firmware-realtek firmware-iwlwifi gnome-core
+apt install -y firmware-linux firmware-realtek firmware-iwlwifi plymouth plymouth-themes flatpak firefox gnome-core
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+plymouth-set-default-theme -R spinner
 
 reboot
