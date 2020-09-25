@@ -18,4 +18,4 @@ update-grub
 
 # Get my apps
 flatpak install flathub -y org.gnome.Calculator org.gnome.Clocks org.gnome.Contacts org.gnome-Calendar org.gnome.eog org.gnome.Totem
-flatpak install flathub -y org.glimpse_editor.Glimpse org.libreoffice.LibreOffice org.qbittorrent.qBittorrent org.mozilla.firefox org.mozilla.Thunderbird
+flatpak install flathub -y org.glimpse_editor.Glimpse org.libreoffice.LibreOffice org.qbittorrent.qBittorrent org.mozilla.firefox org.mozilla.Thunderbird com.transmissionbt.Transmission
