@@ -6,13 +6,13 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # Get rid of trash
-apt purge -y popularity-contest vim-common vim-tiny firefox-esr yelp im-config eog baobab evince totem gnome-calculator gnome-characters gnome-contacts gnome-disk-utility gnome-font-viewer gnome-logs gnome-shell-extension* gnome-software gnome-sushi gnome-system-monitor gnome-tweaks
+apt purge -y popularity-contest vim-common vim-tiny needrestart firefox-esr yelp im-config eog baobab evince totem gnome-calculator gnome-characters gnome-contacts gnome-disk-utility gnome-font-viewer gnome-logs gnome-shell-extension* gnome-software gnome-sushi gnome-system-monitor gnome-tweaks
 apt autoremove --purge -y
 
-# Fix network so networkmanager can take control
+# Disable built in network so networkmanager can take control
 sudo gedit /etc/network/interfaces
 
-# Fix grub to get rid of boot screen and show plymouth
+# Set up grub to get rid of the boot screen and show plymouth
 sudo gedit /etc/default/grub
 update-grub
 

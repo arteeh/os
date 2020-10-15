@@ -22,8 +22,8 @@ echo "alias fr='flatpak remove -y'"  >> /home/arteeh/.bashrc
 echo "alias fa='flatpak remove -y --unused'"  >> /home/arteeh/.bashrc
 echo "alias fudac='fu;fa'"  >> /home/arteeh/.bashrc
 
-# Update to unstable
-echo "deb http://deb.debian.org/debian unstable main contrib non-free" > /etc/apt/sources.list
+# Update to testing
+echo "deb http://deb.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list
 
 apt update
 apt dist-upgrade -y
