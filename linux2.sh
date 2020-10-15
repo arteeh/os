@@ -16,6 +16,8 @@ sudo gedit /etc/network/interfaces
 sudo gedit /etc/default/grub
 update-grub
 
-# Get my apps
-flatpak install flathub -y org.gnome.Calculator org.gnome.Clocks org.gnome.Contacts org.gnome.Calendar org.gnome.eog org.gnome.Totem org.gnome.Boxes org.gnome.Maps
-flatpak install flathub -y org.mozilla.firefox org.mozilla.Thunderbird org.glimpse_editor.Glimpse org.libreoffice.LibreOffice com.transmissionbt.Transmission com.discordapp.Discord org.signal.Signal com.microsoft.Teams
+# Get Gnome apps
+flatpak install flathub -y org.gnome.Calculator org.gnome.Clocks org.gnome.Contacts org.gnome.Calendar org.gnome.eog org.gnome.Totem org.gnome.Boxes org.gnome.Maps org.gnome.Photos org.gnome.Fractal
+
+# Get third party apps
+flatpak install flathub -y org.mozilla.firefox org.mozilla.Thunderbird org.glimpse_editor.Glimpse org.libreoffice.LibreOffice com.transmissionbt.Transmission com.discordapp.Discord com.microsoft.Teams
