@@ -20,7 +20,10 @@ echo "alias fu='flatpak update -y'" >> /home/arteeh/.bashrc
 echo "alias fi='flatpak install -y'"  >> /home/arteeh/.bashrc
 echo "alias fr='flatpak remove -y'"  >> /home/arteeh/.bashrc
 echo "alias fa='flatpak remove -y --unused'"  >> /home/arteeh/.bashrc
+echo "alias fl='flatpak list'"  >> /home/arteeh/.bashrc
 echo "alias fudac='fu;fa'"  >> /home/arteeh/.bashrc
+
+echo "alias g='git add .;git commit;git push'" >> /home/arteeh/.bashrc
 
 # Update to testing
 echo "deb http://deb.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list
