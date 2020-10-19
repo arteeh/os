@@ -29,15 +29,24 @@ echo "alias gp='git push'" >> /home/arteeh/.bashrc
 echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
 
 # Update to testing
-echo "deb http://deb.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list
+echo "deb http://deb.debian.org/debian testing main" > /etc/apt/sources.list
+
+# Update to testing - plus nonfree software for drivers
+# echo "deb http://deb.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list
 
 apt update
 apt dist-upgrade -y
 apt autoremove --purge -y
 apt clean
 
-# Install firmware and desktop
-apt install -y firmware-linux firmware-iwlwifi firmware-realtek plymouth plymouth-themes flatpak gnome-core
+# Desktop internet
+# apt install -y firmware-linux firmware-realtek
+
+# Laptop internet
+# apt install -y firmware-linux firmware-iwlwifi
+
+# Install the desktop
+apt install -y plymouth plymouth-themes flatpak gnome-core
 
 # Set up plymouth
 plymouth-set-default-theme -R spinner
