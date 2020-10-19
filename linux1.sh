@@ -23,7 +23,10 @@ echo "alias fa='flatpak remove -y --unused'"  >> /home/arteeh/.bashrc
 echo "alias fl='flatpak list'"  >> /home/arteeh/.bashrc
 echo "alias fudac='fu;fa'"  >> /home/arteeh/.bashrc
 
-echo "alias g='git add .;git commit;git push'" >> /home/arteeh/.bashrc
+echo "alias ga='git add'" >> /home/arteeh/.bashrc
+echo "alias gc='git commit'" >> /home/arteeh/.bashrc
+echo "alias gp='git push'" >> /home/arteeh/.bashrc
+echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
 
 # Update to testing
 echo "deb http://deb.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list
