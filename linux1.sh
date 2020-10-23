@@ -29,10 +29,10 @@ echo "alias gp='git push'" >> /home/arteeh/.bashrc
 echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
 
 # Update to testing
-# echo "deb http://deb.debian.org/debian unstable main" > /etc/apt/sources.list
+# echo "deb http://deb.debian.org/debian testing main" > /etc/apt/sources.list
 
 # Update to testing - plus nonfree software for drivers
-# echo "deb http://deb.debian.org/debian unstable main contrib non-free" > /etc/apt/sources.list
+# echo "deb http://deb.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list
 
 apt update
 apt dist-upgrade -y
