@@ -46,7 +46,7 @@ apt clean
 # apt install -y firmware-linux firmware-iwlwifi
 
 # Install the desktop
-apt install -y plymouth plymouth-themes flatpak gnome-core fonts-noto
+apt install -y plymouth plymouth-themes flatpak gnome-core fonts-noto gedit-plugin-color-picker gedit-plugin-text-size
 
 # Set up plymouth
 plymouth-set-default-theme -R spinner
