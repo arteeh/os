@@ -29,20 +29,20 @@ echo "alias gp='git push'" >> /home/arteeh/.bashrc
 echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
 
 # Update to testing
-# echo "deb http://deb.debian.org/debian testing main" > /etc/apt/sources.list
+# echo "deb http://deb.debian.org/debian unstable main" > /etc/apt/sources.list
 
 # Update to testing - plus nonfree software for drivers
-# echo "deb http://deb.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list
+# echo "deb http://deb.debian.org/debian unstable main contrib non-free" > /etc/apt/sources.list
 
 apt update
 apt dist-upgrade -y
 apt autoremove --purge -y
 apt clean
 
-# Desktop internet
+# Drivers for my desktop
 # apt install -y firmware-linux firmware-realtek xorg nvidia-driver
 
-# Laptop internet
+# Drivers for my laptop
 # apt install -y firmware-linux firmware-iwlwifi
 
 # Install the desktop
