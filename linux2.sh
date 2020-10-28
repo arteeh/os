@@ -37,13 +37,13 @@ apt purge -y \
 	gnome-software \
 	gnome-sushi \
 	gnome-system-monitor \
-	gnome-tweaks
+	gnome-tweaks \
+	system-config-printer
 
 apt autoremove --purge -y
 
 # Get apps
 flatpak install flathub -y \
-	org.mozilla.firefox \
 	org.mozilla.Thunderbird \
 	org.gnome.Boxes \
 	org.gnome.Calculator \
@@ -55,7 +55,7 @@ flatpak install flathub -y \
 	org.gnome.Photos \
 	com.github.gi_lom.dialect \
 	org.glimpse_editor.Glimpse \
-	com.transmissionbt.Transmission \
+	org.qbittorrent.qBittorrent \
 	com.discordapp.Discord \
 	com.microsoft.Teams \
 	org.libreoffice.LibreOffice \

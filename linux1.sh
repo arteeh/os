@@ -28,11 +28,8 @@ echo "alias gc='git commit'" >> /home/arteeh/.bashrc
 echo "alias gp='git push'" >> /home/arteeh/.bashrc
 echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
 
-# Update to testing
-# echo "deb http://deb.debian.org/debian testing main" > /etc/apt/sources.list
-
 # Update to testing - plus nonfree software for drivers
-# echo "deb http://deb.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list
+echo "deb http://deb.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list
 
 apt update
 apt dist-upgrade -y
@@ -46,7 +43,7 @@ apt clean
 # apt install -y firmware-linux firmware-iwlwifi
 
 # Install the desktop
-apt install -y plymouth plymouth-themes flatpak gnome-core fonts-noto gedit-plugin-color-picker gedit-plugin-text-size
+apt install -y plymouth plymouth-themes flatpak gnome-core fonts-noto gedit-plugin-color-picker gedit-plugin-text-size chromium
 
 # Set up plymouth
 plymouth-set-default-theme -R spinner
