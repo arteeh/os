@@ -15,6 +15,7 @@ update-grub
 
 # Get rid of trash
 apt purge -y \
+	termit \
 	popularity-contest \
 	vim-common \
 	vim-tiny \
