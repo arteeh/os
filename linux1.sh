@@ -18,8 +18,8 @@ echo "alias udac='u;d;a;c'" >> /home/arteeh/.bashrc
 
 echo "alias fu='flatpak update -y'" >> /home/arteeh/.bashrc
 echo "alias fi='flatpak install -y'"  >> /home/arteeh/.bashrc
-echo "alias fr='flatpak remove -y'"  >> /home/arteeh/.bashrc
-echo "alias fa='flatpak remove -y --unused'"  >> /home/arteeh/.bashrc
+echo "alias fr='flatpak remove -y --delete-data'"  >> /home/arteeh/.bashrc
+echo "alias fa='flatpak remove -y --unused --delete-data'"  >> /home/arteeh/.bashrc
 echo "alias fl='flatpak list'"  >> /home/arteeh/.bashrc
 echo "alias fudac='fu;fa'"  >> /home/arteeh/.bashrc
 
