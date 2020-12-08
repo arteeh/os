@@ -5,16 +5,23 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+# Set the grub background to black
+apt install -y imagemagick
+convert -size 1920x1080 xc:black bg.png
+cp bg.png /boot/grub/
+rm bg.png
+
 # Disable built in network so networkmanager can take control
-sudo gedit /etc/network/interfaces
+gedit /etc/network/interfaces
 
 # Set up grub to get rid of the boot screen and show plymouth
-sudo gedit /etc/default/grub
+gedit /etc/default/grub
 
 update-grub
 
 # Get rid of trash
 apt purge -y \
+	imagemagick \
 	termit \
 	popularity-contest \
 	vim-common \
