@@ -52,16 +52,12 @@ apt autoremove --purge -y
 
 # Get apps
 flatpak install flathub -y \
-	org.mozilla.Thunderbird \
-	org.gnome.Boxes \
+	org.chromium.Chromium \
+	org.gnome.Geary \
 	org.gnome.Calculator \
 	org.gnome.Calendar \
 	org.gnome.Clocks \
-	org.gnome.Contacts \
 	org.gnome.Fractal \
-	org.gnome.Maps \
-	org.gnome.Photos \
-	com.github.gi_lom.dialect \
 	org.glimpse_editor.Glimpse \
 	org.qbittorrent.qBittorrent \
 	com.discordapp.Discord \
