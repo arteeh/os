@@ -61,6 +61,7 @@ flatpak install flathub -y \
 	org.glimpse_editor.Glimpse \
 	org.qbittorrent.qBittorrent \
 	com.discordapp.Discord \
+	com.spotify.Client \
 	com.microsoft.Teams \
 	org.libreoffice.LibreOffice \
 	org.gnome.eog \
