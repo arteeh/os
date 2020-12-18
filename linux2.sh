@@ -17,6 +17,8 @@ gedit /etc/network/interfaces
 # Set up grub to get rid of the boot screen and show plymouth
 gedit /etc/default/grub
 
+touch '/home/arteeh/Templates/Empty File'
+
 update-grub
 
 # Get rid of trash
