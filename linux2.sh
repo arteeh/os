@@ -52,17 +52,17 @@ apt autoremove --purge -y
 
 # Get apps
 flatpak install flathub -y \
-	org.chromium.Chromium \
+	org.gnome.eog \
+	org.gnome.Totem \
 	org.gnome.Geary \
 	org.gnome.Calculator \
-	org.gnome.Calendar \
 	org.gnome.Clocks \
 	org.gnome.Fractal \
+	org.gnome.Characters \
 	org.glimpse_editor.Glimpse \
 	org.qbittorrent.qBittorrent \
 	com.discordapp.Discord \
 	com.spotify.Client \
 	com.microsoft.Teams \
 	org.libreoffice.LibreOffice \
-	org.gnome.eog \
-	org.gnome.Totem
+	com.uploadedlobster.peek
