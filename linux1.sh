@@ -23,7 +23,10 @@ echo "alias fi='flatpak install -y'"  >> /home/arteeh/.bashrc
 echo "alias fr='flatpak remove -y --delete-data'"  >> /home/arteeh/.bashrc
 echo "alias fa='flatpak remove -y --unused --delete-data'"  >> /home/arteeh/.bashrc
 echo "alias fl='flatpak list'"  >> /home/arteeh/.bashrc
-echo "alias fudac='fu;fa'"  >> /home/arteeh/.bashrc
+echo "alias fufa='fu;fa'"  >> /home/arteeh/.bashrc
+echo "" >> /home/arteeh/.bashrc
+
+echo "alias up='udac;fufa'" >> /home/arteeh/.bashrc
 echo "" >> /home/arteeh/.bashrc
 
 echo "alias gs='git status'" >> /home/arteeh/.bashrc
@@ -41,10 +44,10 @@ apt autoremove --purge -y
 apt clean
 
 # Drivers for my desktop
-# apt install -y firmware-linux firmware-realtek xorg nvidia-driver
+# apt install -y firmware-linux firmware-realtek
 
 # Drivers for my laptop
-apt install -y firmware-linux firmware-iwlwifi
+# apt install -y firmware-linux firmware-iwlwifi
 
 # Install the desktop
 apt install -y plymouth plymouth-themes flatpak gnome-core fonts-noto gedit-plugin-color-picker gedit-plugin-text-size

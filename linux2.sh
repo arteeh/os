@@ -55,6 +55,9 @@ apt autoremove --purge -y
 # Get apps
 flatpak install flathub -y \
 	org.gnome.eog \
+	org.gnome.Boxes \
+	org.gnome.Epiphany \
+	org.gnome.Extensions \
 	org.gnome.Totem \
 	org.gnome.Geary \
 	org.gnome.Calculator \
@@ -62,7 +65,7 @@ flatpak install flathub -y \
 	org.gnome.Fractal \
 	org.gnome.Characters \
 	org.glimpse_editor.Glimpse \
-	org.qbittorrent.qBittorrent \
+	de.haeckerfelix.Fragments \
 	com.discordapp.Discord \
 	com.spotify.Client \
 	com.microsoft.Teams \
