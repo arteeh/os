@@ -18,6 +18,8 @@ gedit /etc/network/interfaces
 gedit /etc/default/grub
 
 touch '/home/arteeh/Templates/Empty file'
+chown arteeh '/home/arteeh/Templates/Empty file'
+chmod +rw '/home/arteeh/Templates/Empty file'
 
 update-grub
 
