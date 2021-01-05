@@ -12,9 +12,9 @@ _install ()
 {
 	os=$(hostnamectl | grep "Operating System")
 	
-	if [ os == *"Debian"* ]
+	if [ os == *"Debian"* ] ; then
 		apt install -y $1
-	elif [ os == *"Arch"* ]
+	elif [ os == *"Arch"* ] ; then
 		pacman -Syu --noconfirm $1
 	fi
 }
