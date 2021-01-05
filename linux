@@ -23,9 +23,9 @@ _remove ()
 {
 	os=$(hostnamectl | grep "Operating System")
 	
-	if [ os == *"Debian"* ]
+	if [ os == *"Debian"* ] ; then
 		apt purge -y $1
-	elif [ os == *"Arch"* ]
+	elif [ os == *"Arch"* ] ; then
 		pacman -Rsc --noconfirm $1
 	fi
 }
