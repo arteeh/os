@@ -23,25 +23,14 @@ _grub ()
 
 _aliases ()
 {
-	echo "alias i='sudo apt install -y'" >> /home/arteeh/.bashrc
-	echo "alias r='sudo apt purge -y'" >> /home/arteeh/.bashrc
-	echo "alias l='clear;apt list --installed'" >> /home/arteeh/.bashrc
-	echo "" >> /home/arteeh/.bashrc
-	echo "alias u='sudo apt update'" >> /home/arteeh/.bashrc
-	echo "alias d='sudo apt dist-upgrade -y'" >> /home/arteeh/.bashrc
-	echo "alias a='sudo apt autoremove --purge -y'" >> /home/arteeh/.bashrc
-	echo "alias c='sudo apt clean'" >> /home/arteeh/.bashrc
-	echo "alias udac='u;d;a;c'" >> /home/arteeh/.bashrc
-	echo "" >> /home/arteeh/.bashrc
+	# Flatpak
 	echo "alias fu='flatpak update -y'" >> /home/arteeh/.bashrc
 	echo "alias fi='flatpak --user install -y'"  >> /home/arteeh/.bashrc
 	echo "alias fr='flatpak remove -y --delete-data'"  >> /home/arteeh/.bashrc
 	echo "alias fa='flatpak remove -y --unused --delete-data'"  >> /home/arteeh/.bashrc
 	echo "alias fl='flatpak list'"  >> /home/arteeh/.bashrc
-	echo "alias fufa='fu;fa'"  >> /home/arteeh/.bashrc
-	echo "" >> /home/arteeh/.bashrc
-	echo "alias up='udac;fufa'" >> /home/arteeh/.bashrc
-	echo "" >> /home/arteeh/.bashrc
+	
+	# Git
 	echo "alias gs='git status'" >> /home/arteeh/.bashrc
 	echo "alias ga='git add'" >> /home/arteeh/.bashrc
 	echo "alias gc='git commit'" >> /home/arteeh/.bashrc
@@ -49,33 +38,59 @@ _aliases ()
 	echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
 }
 
+_debian-aliases ()
+{
+	# Apt
+	echo "alias i='sudo apt install -y'" >> /home/arteeh/.bashrc
+	echo "alias r='sudo apt purge -y'" >> /home/arteeh/.bashrc
+	echo "alias l='clear;apt list --installed'" >> /home/arteeh/.bashrc
+	echo "alias u='sudo apt update'" >> /home/arteeh/.bashrc
+	echo "alias d='sudo apt dist-upgrade -y'" >> /home/arteeh/.bashrc
+	echo "alias a='sudo apt autoremove --purge -y'" >> /home/arteeh/.bashrc
+	echo "alias c='sudo apt clean'" >> /home/arteeh/.bashrc
+	
+	# Update everything
+	echo "alias up='u;d;a;c;fu;fa'" >> /home/arteeh/.bashrc
+}
+
+_arch-aliases ()
+{
+	# Pacman
+	echo "alias i='sudo pacman -Syu --noconfirm'" >> /home/arteeh/.bashrc
+	echo "alias r='sudo pacman -Rsc --noconfirm'" >> /home/arteeh/.bashrc
+	echo "alias l='pacman -Qs'" >> /home/arteeh/.bashrc
+	echo "alias u='sudo pacman -Syu --noconfirm'" >> /home/arteeh/.bashrc
+	echo "alias a='sudo pacman -Rns $(pacman -Qdtq)'" >> /home/arteeh/.bashrc
+	
+	# Update everything
+	echo "alias up='u;a;fu;fa'" >> /home/arteeh/.bashrc
+}
+
 _debian-upgrade ()
 {
 	_please-root
+	
 	echo "deb http://deb.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list
+	
 	apt update
 	apt dist-upgrade -y
 	apt autoremove --purge -y
 	apt clean
 }
 
-_debian-drivers ()
+_debian-packages ()
 {
 	_please-root
-	apt install -y firmware-linux
+	
 	read -p 'Desktop or laptop? d/l: ' device
 	if [ device == "d" ] ; then
 		apt install -y firmware-realtek
 	elif [ device == "l" ] ; then
 		apt install -y firmware-iwlwifi
 	fi
-}
-
-_debian-gnome ()
-{
-	_please-root
 	
 	apt install -y \
+		firmware-linux \
 		plymouth \
 		plymouth-themes \
 		gnome-core \
@@ -115,7 +130,35 @@ _debian-gnome ()
 		system-config-printer
 	
 	apt autoremove --purge -y
+}
+
+_arch-packages ()
+{
+	pacman -Syu --no-confirm \
+		plymouth
+		gnome-shell \
+		gdm \
+		gedit \
+		gedit-plugins \
+		nautilus \
+		gnome-terminal \
+		gnome-control-center \
+		gnome-tweaks \
+		gnome-screenshot \
+		noto-fonts \
+		noto-fonts-cjk \
+		noto-fonts-emoji \
+		noto-fonts-extra \
+		flatpak
 	
+	#TODO Set up plymouth (https://wiki.archlinux.org/index.php/Plymouth)
+	
+	pacman -Rsc --no-confirm \
+		vim
+}
+
+_templates ()
+{
 	# Add the empty file template
 	touch '/home/arteeh/Templates/Empty file'
 	chown arteeh '/home/arteeh/Templates/Empty file'
@@ -159,15 +202,20 @@ _debian ()
 {
 	_grub
 	_aliases
+	_debian-aliases
 	_debian-upgrade
-	_debian-drivers
-	_debian-gnome
+	_debian-packages
+	_templates
 	_fix-network
 }
 
 _arch ()
 {
-	echo "Nope!"
+	_grub
+	_aliases
+	_arch-aliases
+	_arch-packages
+	_templates
 }
 
 _help ()
