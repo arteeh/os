@@ -207,6 +207,14 @@ _arch-packages ()
 		gdm \
 		gedit \
 		gedit-plugins \
+		gvfs \
+		gvfs-afc \
+		gvfs-goa \
+		gvfs-google \
+		gvfs-gphoto2 \
+		gvfs-mtp \
+		gvfs-nfs \
+		gvfs-smb \
 		nautilus \
 		gnome-terminal \
 		gnome-control-center \
