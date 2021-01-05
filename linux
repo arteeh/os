@@ -48,9 +48,9 @@ _grub ()
 	
 	_please-root
 	
-	_install imagemagick
+	_install "imagemagick"
 	convert -size 1920x1080 xc:black bg.png
-	_remove imagemagick
+	_remove "imagemagick"
 	
 	cp bg.png /boot/grub/
 	rm bg.png
