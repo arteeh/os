@@ -10,6 +10,8 @@ _please-root ()
 
 _install ()
 {
+	_please-root
+	
 	os=$(hostnamectl | grep "Operating System")
 	
 	if [ os == *"Debian"* ] ; then
@@ -21,6 +23,8 @@ _install ()
 
 _remove ()
 {
+	_please-root
+	
 	os=$(hostnamectl | grep "Operating System")
 	
 	if [ os == *"Debian"* ] ; then
@@ -33,6 +37,8 @@ _remove ()
 _grub ()
 {
 	echo "Setting up grub..."
+	
+	_please-root
 	
 	_install imagemagick
 	convert -size 1920x1080 xc:black bg.png
@@ -111,6 +117,8 @@ _debian-upgrade ()
 {
 	echo "Upgrading Debian to testing..."
 	
+	_please-root
+	
 	echo "deb http://deb.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list
 	
 	apt update
@@ -124,6 +132,8 @@ _debian-upgrade ()
 _debian-packages ()
 {
 	echo "Installing packages for Debian..."
+	
+	_please-root
 	
 	read -p 'Desktop or laptop? d/l: ' device
 	if [ device == "d" ] ; then
@@ -181,6 +191,8 @@ _arch-packages ()
 {
 	echo "Installing packages for Arch..."
 	
+	_please-root
+	
 	pacman -Syu --no-confirm \
 		plymouth
 		gnome-shell \
@@ -221,6 +233,8 @@ _templates ()
 _fix-network ()
 {
 	echo "Disabling the built-in network for networkmanager..."
+	
+	_please-root
 	
 	# Disable built in network so networkmanager can take control
 	nano /etc/network/interfaces
