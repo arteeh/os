@@ -10,19 +10,28 @@ _please-root ()
 
 _grub ()
 {
+	echo "Setting up grub..."
+	
 	_please-root
+	
 	apt install -y imagemagick
 	convert -size 1920x1080 xc:black bg.png
 	cp bg.png /boot/grub/
 	rm bg.png
+	
 	sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
 	sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/g' /etc/default/grub
 	sed -i 's/#GRUB_GFXMODE=640x480/GRUB_GFXMODE=1920x1080/g' /etc/default/grub
+	
 	update-grub
+	
+	echo "Done setting up grub"
 }
 
 _aliases ()
 {
+	echo "Adding general aliases..."
+	
 	# Flatpak
 	echo "alias fu='flatpak update -y'" >> /home/arteeh/.bashrc
 	echo "alias fi='flatpak --user install -y'"  >> /home/arteeh/.bashrc
@@ -36,10 +45,14 @@ _aliases ()
 	echo "alias gc='git commit'" >> /home/arteeh/.bashrc
 	echo "alias gp='git push'" >> /home/arteeh/.bashrc
 	echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
+	
+	echo "Done adding general aliases"
 }
 
 _debian-aliases ()
 {
+	echo "Adding Debian-specific aliases..."
+	
 	# Apt
 	echo "alias i='sudo apt install -y'" >> /home/arteeh/.bashrc
 	echo "alias r='sudo apt purge -y'" >> /home/arteeh/.bashrc
@@ -51,10 +64,14 @@ _debian-aliases ()
 	
 	# Update everything
 	echo "alias up='u;d;a;c;fu;fa'" >> /home/arteeh/.bashrc
+	
+	echo "Done adding Debian-specific aliases"
 }
 
 _arch-aliases ()
 {
+	echo "Adding Arch-specific aliases..."
+	
 	# Pacman
 	echo "alias i='sudo pacman -Syu --noconfirm'" >> /home/arteeh/.bashrc
 	echo "alias r='sudo pacman -Rsc --noconfirm'" >> /home/arteeh/.bashrc
@@ -64,10 +81,14 @@ _arch-aliases ()
 	
 	# Update everything
 	echo "alias up='u;a;fu;fa'" >> /home/arteeh/.bashrc
+	
+	echo "Done adding Arch-specific aliases"
 }
 
 _debian-upgrade ()
 {
+	echo "Upgrading Debian to testing..."
+	
 	_please-root
 	
 	echo "deb http://deb.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list
@@ -76,10 +97,14 @@ _debian-upgrade ()
 	apt dist-upgrade -y
 	apt autoremove --purge -y
 	apt clean
+	
+	echo "Done upgrading Debian to testing"
 }
 
 _debian-packages ()
 {
+	echo "Installing packages for Debian..."
+	
 	_please-root
 	
 	read -p 'Desktop or laptop? d/l: ' device
@@ -130,10 +155,14 @@ _debian-packages ()
 		system-config-printer
 	
 	apt autoremove --purge -y
+	
+	echo "Done installing packages for Debian"
 }
 
 _arch-packages ()
 {
+	echo "Installing packages for Arch..."
+	
 	pacman -Syu --no-confirm \
 		plymouth
 		gnome-shell \
@@ -155,29 +184,45 @@ _arch-packages ()
 	
 	pacman -Rsc --no-confirm \
 		vim
+	
+	echo "Done installing packages for Arch"
 }
 
 _templates ()
 {
+	echo "Setting up templates..."
+	
 	# Add the empty file template
 	touch '/home/arteeh/Templates/Empty file'
 	chown arteeh '/home/arteeh/Templates/Empty file'
 	chmod +rw '/home/arteeh/Templates/Empty file'
+	
+	echo "Done setting up templates"
 }
 
 _fix-network ()
 {
+	echo "Disabling the built-in network for networkmanager..."
+	
 	# Disable built in network so networkmanager can take control
 	nano /etc/network/interfaces
 	sed -i 's/allow-hotplug/#allow-hotplug/g' /etc/network/interfaces
 	sed -i 's/iface enp1s0 inet dhcp/#iface enp1s0 inet dhcp/g' /etc/network/interfaces
+	
+	echo "Done disabling the built-in network for networkmanager"
 }
 
 _flatpak ()
 {
+	echo "Adding the flathub repo..."
+	
 	# Set up flathub
 	flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
+	
+	echo "Done adding the flathub repo"
+	
+	echo "Installing apps..."
+	
 	# Get apps
 	flatpak install --user flathub -y \
 		org.gnome.eog \
@@ -196,10 +241,14 @@ _flatpak ()
 		com.spotify.Client \
 		com.discordapp.Discord \
 		com.microsoft.Teams
+	
+	echo "Done installing apps"
 }
 
 _debian ()
 {
+	echo "Setting up Debian..."
+	
 	_grub
 	_aliases
 	_debian-aliases
@@ -207,15 +256,21 @@ _debian ()
 	_debian-packages
 	_templates
 	_fix-network
+	
+	echo "All done!"
 }
 
 _arch ()
 {
+	echo "Setting up Arch..."
+	
 	_grub
 	_aliases
 	_arch-aliases
 	_arch-packages
 	_templates
+	
+	echo "All done!"
 }
 
 _help ()
@@ -225,6 +280,7 @@ _help ()
 	echo "./linux flatpak	-	Configure flathub and install my apps"
 }
 
+# parameters, most are just there for testing
 if [ "$1" == "debian" ]
 then
 	_debian
@@ -234,6 +290,33 @@ then
 elif [ "$1" == "flatpak" ]
 then
 	_flatpak
+elif [ "$1" == "grub" ]
+then
+	_grub
+elif [ "$1" == "aliases" ]
+then
+	_aliases
+elif [ "$1" == "debian-aliases" ]
+then
+	_debian-aliases
+elif [ "$1" == "arch-aliases" ]
+then
+	_arch-aliases
+elif [ "$1" == "debian-upgrade" ]
+then
+	_debian-upgrade
+elif [ "$1" == "debian-packages" ]
+then
+	_debian-packages
+elif [ "$1" == "arch-packages" ]
+then
+	_arch-packages
+elif [ "$1" == "templates" ]
+then
+	_templates
+elif [ "$1" == "fix-network" ]
+then
+	_fix-network
 else
 	_help
 fi
