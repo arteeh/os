@@ -1,0 +1,92 @@
+#!/bin/bash
+
+# TODO automate the actual installation section instead of using Anarchy
+
+# Root check
+
+if [ "$EUID" -ne 0 ]
+	then echo "Please run this command as root"
+	exit
+fi
+
+# Set up grub
+
+pacman -Syu --noconfirm imagemagick
+convert -size 1920x1080 xc:black bg.png
+pacman -Rsc --noconfirm imagemagick
+cp bg.png /boot/grub/
+rm bg.png
+sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
+sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/g' /etc/default/grub
+sed -i 's/#GRUB_GFXMODE=640x480/GRUB_GFXMODE=1920x1080/g' /etc/default/grub
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# Aliases
+
+# Pacman
+echo "alias i='sudo pacman -Syu --noconfirm'" >> /home/arteeh/.bashrc
+echo "alias r='sudo pacman -Rsc --noconfirm'" >> /home/arteeh/.bashrc
+echo "alias l='pacman -Qs'" >> /home/arteeh/.bashrc
+echo "alias u='sudo pacman -Syu --noconfirm'" >> /home/arteeh/.bashrc
+echo "alias a='sudo pacman -Rns $(pacman -Qdtq)'" >> /home/arteeh/.bashrc
+# Flatpak
+echo "alias fu='flatpak update -y'" >> /home/arteeh/.bashrc
+echo "alias fi='flatpak --user install -y'"  >> /home/arteeh/.bashrc
+echo "alias fr='flatpak remove -y --delete-data'"  >> /home/arteeh/.bashrc
+echo "alias fa='flatpak remove -y --unused --delete-data'"  >> /home/arteeh/.bashrc
+echo "alias fl='flatpak list'"  >> /home/arteeh/.bashrc
+# Git
+echo "alias gs='git status'" >> /home/arteeh/.bashrc
+echo "alias ga='git add'" >> /home/arteeh/.bashrc
+echo "alias gc='git commit'" >> /home/arteeh/.bashrc
+echo "alias gp='git push'" >> /home/arteeh/.bashrc
+echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
+# Update everything
+echo "alias up='u;a;fu;fa'" >> /home/arteeh/.bashrc
+
+# Install packages
+
+pacman -Syu --noconfirm \
+	nano \
+	xdg-user-dirs \
+	gnome-shell \
+	gdm \
+	gedit \
+	gedit-plugins \
+	gvfs \
+	gvfs-afc \
+	gvfs-goa \
+	gvfs-google \
+	gvfs-gphoto2 \
+	gvfs-mtp \
+	gvfs-nfs \
+	gvfs-smb \
+	nautilus \
+	gnome-terminal \
+	gnome-control-center \
+	gnome-tweaks \
+	gnome-screenshot \
+	noto-fonts \
+	noto-fonts-cjk \
+	noto-fonts-emoji \
+	noto-fonts-extra \
+	flatpak
+
+# TODO Set up plymouth (https://wiki.archlinux.org/index.php/Plymouth)
+
+# Remove trash
+
+pacman -Rsc --noconfirm \
+	vim
+
+# Run the login screen on startup
+
+systemctl enable gdm
+
+# Add the empty file template
+
+touch '/home/arteeh/Templates/Empty file'
+chown arteeh '/home/arteeh/Templates/Empty file'
+chmod +rw '/home/arteeh/Templates/Empty file'
+
+echo "Done! You should probably reboot so everything is in the right place."

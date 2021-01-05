@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Add the flathub.org repository
+
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Install my apps
+
+flatpak install --user flathub -y \
+	org.gnome.eog \
+	org.gnome.Boxes \
+	org.gnome.Epiphany \
+	org.gnome.Extensions \
+	org.gnome.Totem \
+	org.gnome.Geary \
+	org.gnome.Calculator \
+	org.gnome.Clocks \
+	org.gnome.Fractal \
+	org.gnome.Characters \
+	com.uploadedlobster.peek \
+	com.transmissionbt.Transmission \
+	org.glimpse_editor.Glimpse \
+	com.spotify.Client \
+	com.discordapp.Discord \
+	com.microsoft.Teams
+
+echo "Done! You should probably reboot so everything is in the right place."
