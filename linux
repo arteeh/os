@@ -202,7 +202,7 @@ _arch-packages ()
 	_please-root
 	
 	pacman -Syu --no-confirm \
-		plymouth
+		xdg-user-dirs \
 		gnome-shell \
 		gdm \
 		gedit \
