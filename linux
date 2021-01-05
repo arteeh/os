@@ -16,9 +16,9 @@ _install ()
 	
 	os=$(hostnamectl | grep "Operating System")
 	
-	if [ os == *"Debian"* ] ; then
+	if [[ $os == *"Debian"* ]] ; then
 		apt install -y $1
-	elif [ os == *"Arch"* ] ; then
+	elif [[ $os == *"Arch"* ]] ; then
 		pacman -Syu --noconfirm $1
 	fi
 	
@@ -201,7 +201,7 @@ _arch-packages ()
 	
 	_please-root
 	
-	pacman -Syu --no-confirm \
+	pacman -Syu --noconfirm \
 		xdg-user-dirs \
 		gnome-shell \
 		gdm \
@@ -220,7 +220,7 @@ _arch-packages ()
 	
 	#TODO Set up plymouth (https://wiki.archlinux.org/index.php/Plymouth)
 	
-	pacman -Rsc --no-confirm \
+	pacman -Rsc --noconfirm \
 		vim
 	
 	systemctl enable gdm
