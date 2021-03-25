@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Root check
+
+if [ "$EUID" -ne 0 ]
+	then echo "Please run this command as root"
+	exit
+fi
+
+# Aliases
+
+# Rpm-ostree
+echo "alias u='rpm-ostree upgrade'" >> /home/arteeh/.bashrc
+echo "alias c='rpm-ostree cleanup'" >> /home/arteeh/.bashrc
+
+# Flatpak
+echo "alias fu='flatpak update -y'" >> /home/arteeh/.bashrc
+echo "alias fi='flatpak --user install -y'"  >> /home/arteeh/.bashrc
+echo "alias fr='flatpak remove -y --delete-data'"  >> /home/arteeh/.bashrc
+echo "alias fa='flatpak remove -y --unused --delete-data'"  >> /home/arteeh/.bashrc
+echo "alias fl='flatpak list'"  >> /home/arteeh/.bashrc
+
+# Git
+echo "alias gs='git status'" >> /home/arteeh/.bashrc
+echo "alias ga='git add'" >> /home/arteeh/.bashrc
+echo "alias gc='git commit'" >> /home/arteeh/.bashrc
+echo "alias gp='git push'" >> /home/arteeh/.bashrc
+echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
+# Update everything
+echo "alias up='u;c;fu;fa'" >> /home/arteeh/.bashrc
+
+# Remove default apps installed to system
+
+flatpak remove -y --delete-data org.gnome.Calculator \
+	org.gnome.Calendar \
+	org.gnome.Characters \
+	org.gnome.Contacts \
+	org.gnome.Evince \
+	org.gnome.FileRoller \
+	org.gnome.Logs \
+	org.gnome.Maps \
+	org.gnome.NautilusPreviewer \
+	org.gnome.Screenshot \
+	org.gnome.Weather \
+	org.gnome.baobab \
+	org.gnome.clocks \
+	org.gnome.eog \
+	org.gnome.font-viewer \
+	org.gnome.gedit \
+	org.fedoraproject.Platform
+
+flatpak remove -y --unused --delete-data
+
+flatpak remote-delete fedora
+
+# Add the empty file template
+touch '/home/arteeh/Templates/Empty file'
+chown arteeh '/home/arteeh/Templates/Empty file'
+chmod +rw '/home/arteeh/Templates/Empty file'
+
+echo "Done! You should probably reboot so everything is in the right place."
+
+

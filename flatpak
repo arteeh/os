@@ -7,19 +7,18 @@ flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flath
 # Install my apps
 
 flatpak install --user flathub -y \
+	org.gnome.gedit \
 	org.gnome.eog \
-	org.gnome.Boxes \
-	org.gnome.Epiphany \
-	org.gnome.Extensions \
 	org.gnome.Totem \
 	org.gnome.Geary \
 	org.gnome.Calculator \
 	org.gnome.Clocks \
+	org.gnome.Weather \
+	org.gnome.Boxes \
 	org.gnome.Fractal \
-	org.gnome.Characters \
-	com.uploadedlobster.peek \
-	com.transmissionbt.Transmission \
+	com.github.Eloston.UngoogledChromium \
 	org.glimpse_editor.Glimpse \
+	com.transmissionbt.Transmission \
 	com.spotify.Client \
 	com.discordapp.Discord \
 	com.microsoft.Teams
