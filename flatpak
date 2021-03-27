@@ -19,8 +19,10 @@ flatpak install --user flathub -y \
 	com.github.Eloston.UngoogledChromium \
 	org.glimpse_editor.Glimpse \
 	com.transmissionbt.Transmission \
+	org.signal.Signal \
 	com.spotify.Client \
 	com.discordapp.Discord \
-	com.microsoft.Teams
+	com.microsoft.Teams \
+	org.libreoffice.LibreOffice
 
 echo "Done! You should probably reboot so everything is in the right place."
