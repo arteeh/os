@@ -11,6 +11,7 @@ fi
 
 # Rpm-ostree
 echo "alias u='rpm-ostree upgrade'" >> /home/arteeh/.bashrc
+echo "alias c='rpm-ostree cleanup -bm'" >> /home/arteeh/.bashrc
 
 # Flatpak
 echo "alias fu='flatpak update -y'" >> /home/arteeh/.bashrc
@@ -26,7 +27,7 @@ echo "alias gc='git commit'" >> /home/arteeh/.bashrc
 echo "alias gp='git push'" >> /home/arteeh/.bashrc
 echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
 # Update everything
-echo "alias up='u;fu;fa'" >> /home/arteeh/.bashrc
+echo "alias up='u;c;fu;fa'" >> /home/arteeh/.bashrc
 
 # Remove default apps installed to system
 
