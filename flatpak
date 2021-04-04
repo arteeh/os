@@ -7,20 +7,27 @@ flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flath
 # Install my apps
 
 flatpak install --user flathub -y \
-	org.gnome.gedit \
-	org.gnome.eog \
-	org.gnome.Totem \
-	org.gnome.Geary \
-	org.gnome.Calculator \
-	org.gnome.Clocks \
-	org.gnome.Weather \
+	org.gnome.baobab \
 	org.gnome.Boxes \
+	org.gnome.Calculator \
+	org.gnome.Calendar \
+	org.gnome.Clocks \
+	org.gnome.eog \
+	org.gnome.Epiphany \
 	org.gnome.Fractal \
-	com.github.Eloston.UngoogledChromium \
-	org.glimpse_editor.Glimpse \
-	com.transmissionbt.Transmission \
-	com.spotify.Client \
+	org.gnome.Geary \
+	org.gnome.gedit \
+	org.gnome.Maps \
+	org.gnome.Totem \
+	org.gnome.Weather \
+	org.libreoffice.LibreOffice \
+	org.signal.Signal \
 	com.discordapp.Discord \
-	com.microsoft.Teams
+	com.github.Eloston.UngoogledChromium \
+	com.github.tchx84.Flatseal \
+	com.microsoft.Teams \
+	com.spotify.Client \
+	com.transmissionbt.Transmission \
+	org.glimpse_editor.Glimpse
 
 echo "Done! You should probably reboot so everything is in the right place."
