@@ -11,7 +11,7 @@ fi
 
 # Rpm-ostree
 echo "alias u='rpm-ostree upgrade'" >> /home/arteeh/.bashrc
-echo "alias c='rpm-ostree cleanup'" >> /home/arteeh/.bashrc
+echo "alias c='rpm-ostree cleanup -bm'" >> /home/arteeh/.bashrc
 
 # Flatpak
 echo "alias fu='flatpak update -y'" >> /home/arteeh/.bashrc

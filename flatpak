@@ -20,6 +20,7 @@ flatpak install --user flathub -y \
 	org.gnome.Maps \
 	org.gnome.Totem \
 	org.gnome.Weather \
+	org.glimpse_editor.Glimpse \
 	org.libreoffice.LibreOffice \
 	org.signal.Signal \
 	com.discordapp.Discord \
@@ -27,7 +28,6 @@ flatpak install --user flathub -y \
 	com.github.tchx84.Flatseal \
 	com.microsoft.Teams \
 	com.spotify.Client \
-	com.transmissionbt.Transmission \
-	org.glimpse_editor.Glimpse
+	com.transmissionbt.Transmission
 
 echo "Done! You should probably reboot so everything is in the right place."
