@@ -1,90 +1,89 @@
-get-appxpackage 1527c705-839a-4832-9118-54d4Bd6a0c89 | remove-appxpackage -allusers
-get-appxpackage c5e2524a-ea46-4f67-841f-6a9465d9d515 | remove-appxpackage -allusers
-get-appxpackage E2A4F912-2574-4A75-9BB0-0D023378592B | remove-appxpackage -allusers
-get-appxpackage F46D4000-FD22-4DB4-AC8E-4E1DDDE828FE | remove-appxpackage -allusers
-get-appxpackage Microsoft.549981C3F5F10 | remove-appxpackage -allusers
-Get-AppxPackage Microsoft.549981C3F5F10 | remove-appxpackage -allusers
-get-appxpackage Microsoft.AAD.BrokerPlugin | remove-appxpackage -allusers
-get-appxpackage Microsoft.AccountsControl | remove-appxpackage -allusers
-get-appxpackage Microsoft.Advertising.Xaml | remove-appxpackage -allusers
-get-appxpackage Microsoft.AsyncTextService | remove-appxpackage -allusers
-get-appxpackage Microsoft.BingWeather | remove-appxpackage -allusers
-get-appxpackage Microsoft.BioEnrollment | remove-appxpackage -allusers
-get-appxpackage Microsoft.CredDialogHost | remove-appxpackage -allusers
-get-appxpackage Microsoft.DesktopAppInstaller | remove-appxpackage -allusers
-get-appxpackage Microsoft.ECApp | remove-appxpackage -allusers
-get-appxpackage Microsoft.GetHelp | remove-appxpackage -allusers
-get-appxpackage Microsoft.Getstarted | remove-appxpackage -allusers
-get-appxpackage Microsoft.HEIFImageExtension | remove-appxpackage -allusers
-get-appxpackage Microsoft.LockApp | remove-appxpackage -allusers
-get-appxpackage Microsoft.Messaging | remove-appxpackage -allusers
-get-appxpackage Microsoft.Microsoft3DViewer | remove-appxpackage -allusers
-get-appxpackage Microsoft.MicrosoftEdgeDevToolsClient | remove-appxpackage -allusers
-get-appxpackage Microsoft.MicrosoftEdge | remove-appxpackage -allusers
-get-appxpackage Microsoft.MicrosoftEdge.Stable | remove-appxpackage -allusers
-get-appxpackage Microsoft.MicrosoftOfficeHub | remove-appxpackage -allusers
-get-appxpackage Microsoft.MicrosoftSolitaireCollection | remove-appxpackage -allusers
-get-appxpackage Microsoft.MicrosoftStickyNotes | remove-appxpackage -allusers
-get-appxpackage Microsoft.MixedReality.Portal | remove-appxpackage -allusers
-get-appxpackage Microsoft.MSPaint | remove-appxpackage -allusers
-get-appxpackage Microsoft.NET.Native.Framework.1.7 | remove-appxpackage -allusers
-get-appxpackage Microsoft.NET.Native.Framework.2.2 | remove-appxpackage -allusers
-get-appxpackage Microsoft.NET.Native.Runtime.1.7 | remove-appxpackage -allusers
-get-appxpackage Microsoft.NET.Native.Runtime.2.2 | remove-appxpackage -allusers
-get-appxpackage Microsoft.Office.OneNote | remove-appxpackage -allusers
-get-appxpackage Microsoft.People | remove-appxpackage -allusers
-get-appxpackage Microsoft.ScreenSketch | remove-appxpackage -allusers
-get-appxpackage Microsoft.SkypeApp | remove-appxpackage -allusers
-get-appxpackage Microsoft.StorePurchaseApp | remove-appxpackage -allusers
-get-appxpackage Microsoft.UI.Xaml.2.0 | remove-appxpackage -allusers
-get-appxpackage Microsoft.UI.Xaml.2.5 | remove-appxpackage -allusers
-get-appxpackage Microsoft.VCLibs.140.00 | remove-appxpackage -allusers
-get-appxpackage Microsoft.VCLibs.140.00.UWPDesktop | remove-appxpackage -allusers
-get-appxpackage Microsoft.VP9VideoExtensions | remove-appxpackage -allusers
-get-appxpackage Microsoft.Wallet | remove-appxpackage -allusers
-get-appxpackage Microsoft.WebMediaExtensions | remove-appxpackage -allusers
-get-appxpackage Microsoft.WebpImageExtension | remove-appxpackage -allusers
-get-appxpackage Microsoft.Win32WebViewHost | remove-appxpackage -allusers
-get-appxpackage Microsoft.WindowsAlarms | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.Apprep.ChxApp | remove-appxpackage -allusers
-get-appxpackage Microsoft.WindowsCalculator | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.CallingShellApp | remove-appxpackage -allusers
-get-appxpackage Microsoft.WindowsCamera | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.CapturePicker | remove-appxpackage -allusers
-get-appxpackage MicrosoftWindows.Client.CBS | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.CloudExperienceHost | remove-appxpackage -allusers
-get-appxpackage microsoft.windowscommunicationsapps | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.ContentDeliveryManager | remove-appxpackage -allusers
-get-appxpackage Microsoft.WindowsFeedbackHub | remove-appxpackage -allusers
-get-appxpackage Microsoft.WindowsMaps | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.NarratorQuickStart | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.OOBENetworkCaptivePortal | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.OOBENetworkConnectionFlow | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.ParentalControls | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.PeopleExperienceHost | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.Photos | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.PinningConfirmationDialog | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.Search | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.SecHealthUI | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.ShellExperienceHost | remove-appxpackage -allusers
-get-appxpackage Microsoft.WindowsSoundRecorder | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.StartMenuExperienceHost | remove-appxpackage -allusers
-get-appxpackage Microsoft.WindowsStore | remove-appxpackage -allusers
-get-appxpackage MicrosoftWindows.UndockedDevKit | remove-appxpackage -allusers
-get-appxpackage Microsoft.Windows.XGpuEjectDialog | remove-appxpackage -allusers
-get-appxpackage Microsoft.XboxApp | remove-appxpackage -allusers
-get-appxpackage Microsoft.XboxGameCallableUI | remove-appxpackage -allusers
-get-appxpackage Microsoft.XboxGameOverlay
-get-appxpackage Microsoft.XboxGameOverlay | remove-appxpackage -allusers
-get-appxpackage Microsoft.XboxGamingOverlay | remove-appxpackage -allusers
-get-appxpackage Microsoft.XboxIdentityProvider | remove-appxpackage -allusers
-get-appxpackage Microsoft.XboxSpeechToTextOverlay | remove-appxpackage -allusers
-get-appxpackage Microsoft.Xbox.TCUI | remove-appxpackage -allusers
-get-appxpackage Microsoft.YourPhone | remove-appxpackage -allusers
-get-appxpackage Microsoft.ZuneMusic | remove-appxpackage -allusers
-get-appxpackage Microsoft.ZuneVideo | remove-appxpackage -allusers
-get-appxpackage NcsiUwpApp | remove-appxpackage -allusers
-get-appxpackage Windows.CBSPreview | remove-appxpackage -allusers
-get-appxpackage windows.immersivecontrolpanel | remove-appxpackage -allusers
-get-appxpackage Windows.PrintDialog | remove-appxpackage -allusers
+get-appxpackage 1527c705-839a-4832-9118-54d4Bd6a0c89 | remove-appxpackage
+get-appxpackage c5e2524a-ea46-4f67-841f-6a9465d9d515 | remove-appxpackage
+get-appxpackage E2A4F912-2574-4A75-9BB0-0D023378592B | remove-appxpackage
+get-appxpackage F46D4000-FD22-4DB4-AC8E-4E1DDDE828FE | remove-appxpackage
+get-appxpackage Microsoft.549981C3F5F10 | remove-appxpackage
+Get-AppxPackage Microsoft.549981C3F5F10 | remove-appxpackage
+get-appxpackage Microsoft.AAD.BrokerPlugin | remove-appxpackage
+get-appxpackage Microsoft.AccountsControl | remove-appxpackage
+get-appxpackage Microsoft.Advertising.Xaml | remove-appxpackage
+get-appxpackage Microsoft.AsyncTextService | remove-appxpackage
+get-appxpackage Microsoft.BingWeather | remove-appxpackage
+get-appxpackage Microsoft.BioEnrollment | remove-appxpackage
+get-appxpackage Microsoft.CredDialogHost | remove-appxpackage
+get-appxpackage Microsoft.DesktopAppInstaller | remove-appxpackage
+get-appxpackage Microsoft.ECApp | remove-appxpackage
+get-appxpackage Microsoft.GetHelp | remove-appxpackage
+get-appxpackage Microsoft.Getstarted | remove-appxpackage
+get-appxpackage Microsoft.HEIFImageExtension | remove-appxpackage
+get-appxpackage Microsoft.LockApp | remove-appxpackage
+get-appxpackage Microsoft.Messaging | remove-appxpackage
+get-appxpackage Microsoft.Microsoft3DViewer | remove-appxpackage
+get-appxpackage Microsoft.MicrosoftEdgeDevToolsClient | remove-appxpackage
+get-appxpackage Microsoft.MicrosoftEdge | remove-appxpackage
+get-appxpackage Microsoft.MicrosoftEdge.Stable | remove-appxpackage
+get-appxpackage Microsoft.MicrosoftOfficeHub | remove-appxpackage
+get-appxpackage Microsoft.MicrosoftSolitaireCollection | remove-appxpackage
+get-appxpackage Microsoft.MicrosoftStickyNotes | remove-appxpackage
+get-appxpackage Microsoft.MixedReality.Portal | remove-appxpackage
+get-appxpackage Microsoft.MSPaint | remove-appxpackage
+get-appxpackage Microsoft.NET.Native.Framework.1.7 | remove-appxpackage
+get-appxpackage Microsoft.NET.Native.Framework.2.2 | remove-appxpackage
+get-appxpackage Microsoft.NET.Native.Runtime.1.7 | remove-appxpackage
+get-appxpackage Microsoft.NET.Native.Runtime.2.2 | remove-appxpackage
+get-appxpackage Microsoft.Office.OneNote | remove-appxpackage
+get-appxpackage Microsoft.People | remove-appxpackage
+get-appxpackage Microsoft.ScreenSketch | remove-appxpackage
+get-appxpackage Microsoft.SkypeApp | remove-appxpackage
+get-appxpackage Microsoft.StorePurchaseApp | remove-appxpackage
+get-appxpackage Microsoft.UI.Xaml.2.0 | remove-appxpackage
+get-appxpackage Microsoft.UI.Xaml.2.5 | remove-appxpackage
+get-appxpackage Microsoft.VCLibs.140.00 | remove-appxpackage
+get-appxpackage Microsoft.VCLibs.140.00.UWPDesktop | remove-appxpackage
+get-appxpackage Microsoft.VP9VideoExtensions | remove-appxpackage
+get-appxpackage Microsoft.Wallet | remove-appxpackage
+get-appxpackage Microsoft.WebMediaExtensions | remove-appxpackage
+get-appxpackage Microsoft.WebpImageExtension | remove-appxpackage
+get-appxpackage Microsoft.Win32WebViewHost | remove-appxpackage
+get-appxpackage Microsoft.WindowsAlarms | remove-appxpackage
+get-appxpackage Microsoft.Windows.Apprep.ChxApp | remove-appxpackage
+get-appxpackage Microsoft.WindowsCalculator | remove-appxpackage
+get-appxpackage Microsoft.Windows.CallingShellApp | remove-appxpackage
+get-appxpackage Microsoft.WindowsCamera | remove-appxpackage
+get-appxpackage Microsoft.Windows.CapturePicker | remove-appxpackage
+get-appxpackage MicrosoftWindows.Client.CBS | remove-appxpackage
+get-appxpackage Microsoft.Windows.CloudExperienceHost | remove-appxpackage
+get-appxpackage microsoft.windowscommunicationsapps | remove-appxpackage
+get-appxpackage Microsoft.Windows.ContentDeliveryManager | remove-appxpackage
+get-appxpackage Microsoft.WindowsFeedbackHub | remove-appxpackage
+get-appxpackage Microsoft.WindowsMaps | remove-appxpackage
+get-appxpackage Microsoft.Windows.NarratorQuickStart | remove-appxpackage
+get-appxpackage Microsoft.Windows.OOBENetworkCaptivePortal | remove-appxpackage
+get-appxpackage Microsoft.Windows.OOBENetworkConnectionFlow | remove-appxpackage
+get-appxpackage Microsoft.Windows.ParentalControls | remove-appxpackage
+get-appxpackage Microsoft.Windows.PeopleExperienceHost | remove-appxpackage
+get-appxpackage Microsoft.Windows.Photos | remove-appxpackage
+get-appxpackage Microsoft.Windows.PinningConfirmationDialog | remove-appxpackage
+get-appxpackage Microsoft.Windows.Search | remove-appxpackage
+get-appxpackage Microsoft.Windows.SecHealthUI | remove-appxpackage
+get-appxpackage Microsoft.Windows.ShellExperienceHost | remove-appxpackage
+get-appxpackage Microsoft.WindowsSoundRecorder | remove-appxpackage
+get-appxpackage Microsoft.Windows.StartMenuExperienceHost | remove-appxpackage
+get-appxpackage Microsoft.WindowsStore | remove-appxpackage
+get-appxpackage MicrosoftWindows.UndockedDevKit | remove-appxpackage
+get-appxpackage Microsoft.Windows.XGpuEjectDialog | remove-appxpackage
+get-appxpackage Microsoft.XboxApp | remove-appxpackage
+get-appxpackage Microsoft.XboxGameCallableUI | remove-appxpackage
+get-appxpackage Microsoft.XboxGameOverlay | remove-appxpackage
+get-appxpackage Microsoft.XboxGamingOverlay | remove-appxpackage
+get-appxpackage Microsoft.XboxIdentityProvider | remove-appxpackage
+get-appxpackage Microsoft.XboxSpeechToTextOverlay | remove-appxpackage
+get-appxpackage Microsoft.Xbox.TCUI | remove-appxpackage
+get-appxpackage Microsoft.YourPhone | remove-appxpackage
+get-appxpackage Microsoft.ZuneMusic | remove-appxpackage
+get-appxpackage Microsoft.ZuneVideo | remove-appxpackage
+get-appxpackage NcsiUwpApp | remove-appxpackage
+get-appxpackage Windows.CBSPreview | remove-appxpackage
+get-appxpackage windows.immersivecontrolpanel | remove-appxpackage
+get-appxpackage Windows.PrintDialog | remove-appxpackage
 
