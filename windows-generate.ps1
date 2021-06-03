@@ -1,0 +1,1 @@
+get-appxpackage | out-string -stream | select-string "^Name" | out-string -stream | % {$_.replace("Name              : ","get-appxpackage ")} | foreach {$_ +  " | remove-appxpackage"} | out-file -filepath toremove.ps1
