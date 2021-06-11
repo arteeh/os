@@ -26,6 +26,7 @@ echo "alias ga='git add'" >> /home/arteeh/.bashrc
 echo "alias gc='git commit'" >> /home/arteeh/.bashrc
 echo "alias gp='git push'" >> /home/arteeh/.bashrc
 echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
+
 # Update everything
 echo "alias up='u;c;fu;fa'" >> /home/arteeh/.bashrc
 

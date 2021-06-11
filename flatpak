@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Add the flathub.org repository
+# Add the flathub.org and fedora repositories
 
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --user --if-not-exists fedora oci+https://registry.fedoraproject.org
@@ -29,7 +29,9 @@ flatpak install --user flathub -y \
 	com.github.tchx84.Flatseal \
 	com.microsoft.Teams \
 	com.spotify.Client \
-	org.gnome.Screenshot \
-	com.transmissionbt.Transmission \
+	com.transmissionbt.Transmission
+
+flatpak install --user fedora -y \
+	org.gnome.Screenshot
 
 echo "Done! You should probably reboot so everything is in the right place."
