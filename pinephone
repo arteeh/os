@@ -64,6 +64,9 @@ dnf autoremove -y
 
 dnf install -y				\
 	flatpak				\
+	mutter				\
+	gdm				\
+	gnome-shell			\
 	gnome-control-center
 
 echo "Done! You should probably reboot so everything is in the right place."
