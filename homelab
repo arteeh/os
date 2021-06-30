@@ -1,0 +1,71 @@
+#!/bin/bash
+
+# Root check
+
+if [ "$EUID" -ne 0 ]
+	then echo "Please run this command as root"
+	exit
+fi
+
+# Aliases
+
+# Apt
+echo "alias i='sudo apt install -y'" >> /home/arteeh/.bashrc
+echo "alias r='sudo apt purge -y'" >> /home/arteeh/.bashrc
+echo "alias l='clear;apt list --installed'" >> /home/arteeh/.bashrc
+echo "alias u='sudo apt update'" >> /home/arteeh/.bashrc
+echo "alias d='sudo apt dist-upgrade -y'" >> /home/arteeh/.bashrc
+echo "alias a='sudo apt autoremove --purge -y'" >> /home/arteeh/.bashrc
+echo "alias c='sudo apt clean'" >> /home/arteeh/.bashrc
+
+# Git
+echo "alias gs='git status'" >> /home/arteeh/.bashrc
+echo "alias ga='git add'" >> /home/arteeh/.bashrc
+echo "alias gc='git commit'" >> /home/arteeh/.bashrc
+echo "alias gp='git push'" >> /home/arteeh/.bashrc
+echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
+
+# Update everything
+echo "alias up='u;d;a;c'" >> /home/arteeh/.bashrc
+
+# Upgrade to unstable
+
+echo "deb http://deb.debian.org/debian unstable main contrib non-free" > /etc/apt/sources.list
+
+apt update
+apt dist-upgrade -y
+apt autoremove --purge -y
+apt clean
+
+# Install packages
+
+apt install -y \
+	ufw \
+	git \
+	podman \
+	cockpit \
+	cockpit-podman
+
+apt purge -y \
+	popularity-contest \
+	vim-common \
+	vim-tiny \
+	needrestart
+
+apt autoremove --purge -y
+
+# Set up the firewall
+ufw enable
+ufw default allow outgoing
+ufw default deny incoming
+
+# Allow port 81 for Nginx Proxy Manager
+ufw allow 81/tcp
+
+# Allow port 9090 for cockpit
+ufw allow 9090/tcp
+
+# Allow ports 80 and 443 for web hosting
+ufw allow 'WWW Full'
+
+echo "Done! You should probably reboot so everything is in the right place."
