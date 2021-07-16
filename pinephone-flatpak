@@ -2,24 +2,24 @@
 
 # Add the flathub.org and fedora repositories
 
-flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --user --if-not-exists fedora oci+https://registry.fedoraproject.org
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Install my apps
 
-flatpak install --user flathub -y		\
+flatpak install --user fedora -y		\
 	org.gnome.Calculator			\
 	org.gnome.Clocks			\
 	org.gnome.eog				\
 	org.gnome.Epiphany			\
-	org.gnome.Fractal			\
 	org.gnome.Geary				\
 	org.gnome.gedit				\
 	org.gnome.Maps				\
+	org.gnome.Screenshot			\
 	org.gnome.SoundRecorder			\
-	org.gnome.Totem				\
-	org.gnome.Weather			\
-	org.gabmus.whatip			\
+	org.gnome.Weather
+
+flatpak install --user flathub -y		\
 	com.belmoussaoui.Obfuscate		\
 	com.bitstower.Markets			\
 	com.github.bleakgrey.tootle		\
@@ -34,9 +34,9 @@ flatpak install --user flathub -y		\
 	de.haeckerfelix.Shortwave		\
 	dev.tchx84.Portfolio			\
 	fr.romainvigier.MetadataCleaner		\
-	io.github.seadve.Kooha
-
-flatpak install --user fedora -y		\
-	org.gnome.Screenshot
+	io.github.seadve.Kooha			\
+	org.gabmus.whatip			\
+	org.gnome.Fractal			\
+	org.gnome.Totem
 
 echo "Done! You should probably reboot so everything is in the right place."
