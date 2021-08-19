@@ -28,9 +28,9 @@ echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
 # Update everything
 echo "alias up='u;d;a;c'" >> /home/arteeh/.bashrc
 
-# Upgrade to unstable
-
-echo "deb http://deb.debian.org/debian unstable main contrib non-free" > /etc/apt/sources.list
+# Git config
+git config --global user.name "Maarten de Jong"
+git config --global user.email "accounts@arteeh.com"
 
 apt update
 apt dist-upgrade -y
@@ -41,10 +41,8 @@ apt clean
 
 apt install -y \
 	ufw \
-	git \
-	podman \
-	cockpit \
-	cockpit-podman
+	docker \
+	docker-compose
 
 apt purge -y \
 	popularity-contest \
@@ -59,13 +57,13 @@ ufw enable
 ufw default allow outgoing
 ufw default deny incoming
 
+# Allow port 22 for SSH
+ufw allow 22/tcp
+
 # Allow port 81 for Nginx Proxy Manager
 ufw allow 81/tcp
 
-# Allow port 9090 for cockpit
-ufw allow 9090/tcp
-
-# Allow ports 80 and 443 for web hosting
-ufw allow 'WWW Full'
+# Allow port 443 for HTTPS
+ufw allow 443/tcp
 
 echo "Done! You should probably reboot so everything is in the right place."
