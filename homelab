@@ -40,6 +40,7 @@ apt clean
 # Install packages
 
 apt install -y \
+	openssh-server \
 	ufw \
 	docker \
 	docker-compose
@@ -58,12 +59,16 @@ ufw default allow outgoing
 ufw default deny incoming
 
 # Allow port 22 for SSH
-ufw allow 22/tcp
+ufw allow 22
 
 # Allow port 81 for Nginx Proxy Manager
-ufw allow 81/tcp
+ufw allow 81
 
 # Allow port 443 for HTTPS
-ufw allow 443/tcp
+ufw allow 443
+
+# Allow port 8332 and 8333 for Bitcoin
+ufw allow 8332
+ufw allow 8333
 
 echo "Done! You should probably reboot so everything is in the right place."
