@@ -48,6 +48,7 @@ apt clean
 
 apt purge -y \
 	baobab \
+	chatty \
 	eog \
 	epiphany-browser \
 	evince \
@@ -56,10 +57,12 @@ apt purge -y \
 	fractal \
 	fwupd \
 	geary \
+	gedit \
 	gnome-2048 \
 	gnome-authenticator \
 	gnome-calculator \
 	gnome-calendar \
+	gnome-calls \
 	gnome-characters \
 	gnome-chess \
 	gnome-clocks \
@@ -80,13 +83,15 @@ apt purge -y \
 	gnome-weather \
 	imagemagick \
 	im-config \
+	im-config \
 	lollypop
 	malcontent \
 	needrestart \
 	nemo \
 	popularity-contest \
+	portfolio-filemanager \
 	powersupply \
-	system-config-printer
+	system-config-printer \
 	telegram* \
 	termit \
 	totem \
