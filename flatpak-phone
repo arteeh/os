@@ -31,7 +31,6 @@ flatpak install --user flathub -y		\
 	org.gnome.Geary				\
 	org.gnome.gedit				\
 	org.gnome.Maps				\
-	org.gnome.Screenshot			\
 	org.gnome.SoundRecorder			\
 	org.gnome.Totem				\
 	org.gnome.Weather
