@@ -100,6 +100,8 @@ apt purge -y \
 	yelp \
 	youtube-dl
 
+sudo rm /usr/share/applications/nm-connection-editor.desktop
+
 apt install -y				\
 	flatpak				\
 	mutter				\
