@@ -95,6 +95,13 @@ apt purge -y \
 	yelp \
 	youtube-dl
 
+apt install -y				\
+	flatpak				\
+	mutter				\
+	gdm3				\
+	gnome-shell			\
+	gnome-control-center
+
 apt autoremove --purge -y
 
 echo "Done! You should probably reboot so everything is in the right place."
