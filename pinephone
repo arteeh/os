@@ -18,6 +18,7 @@ apk del --purge \
 	gnome-calculator \
 	gnome-clocks \
 	gnome-contacts \
+	gnome-software \
 	megapixels \
 	mobile-config-firefox \
 	portfolio \
