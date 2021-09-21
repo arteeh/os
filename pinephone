@@ -7,68 +7,23 @@ if [ "$EUID" -ne 0 ]
 	exit
 fi
 
-# Aliases
-
-# Dnf
-echo "alias i='sudo dnf install -y'" >> /home/arteeh/.bashrc
-echo "alias r='sudo dnf remove -y'" >> /home/arteeh/.bashrc
-echo "alias l='clear;dnf list --installed'" >> /home/arteeh/.bashrc
-echo "alias u='dnf check-update -y'" >> /home/arteeh/.bashrc
-echo "alias d='sudo dnf upgrade -y'" >> /home/arteeh/.bashrc
-echo "alias a='sudo dnf autoremove -y'" >> /home/arteeh/.bashrc
-echo "alias c='dnf clean all -y'" >> /home/arteeh/.bashrc
-
-# Flatpak
-echo "alias fu='flatpak update -y'" >> /home/arteeh/.bashrc
-echo "alias fi='flatpak --user install -y'"  >> /home/arteeh/.bashrc
-echo "alias fr='flatpak remove -y --delete-data'"  >> /home/arteeh/.bashrc
-echo "alias fa='flatpak remove -y --unused --delete-data'"  >> /home/arteeh/.bashrc
-echo "alias fl='flatpak list'"  >> /home/arteeh/.bashrc
-
-# Git
-echo "alias gs='git status'" >> /home/arteeh/.bashrc
-echo "alias ga='git add'" >> /home/arteeh/.bashrc
-echo "alias gc='git commit'" >> /home/arteeh/.bashrc
-echo "alias gp='git push'" >> /home/arteeh/.bashrc
-echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
-
-# Update everything
-echo "alias up='u;d;a;c;fu;fa'" >> /home/arteeh/.bashrc
-
-# Git config
-git config --global user.name "Maarten de Jong"
-git config --global user.email "accounts@arteeh.com"
-
 # Remove packages
 
-dnf remove -y				\
-	arm-image-installer		\
-	calls				\
-	chatty				\
-	epiphany			\
-	evolution			\
-	evolution-langpacks		\
-	evolution-data-server		\
-	evolution-data-server-langpacks	\
-	firefox				\
-	gnome-contacts			\
-	gnome-power-manager		\
-	gnome-system-monitor		\
-	gnome-usage			\
-	initial-setup			\
-	megapixels			\
-	nautilus			\
-	vim-minimal
+apk del --purge \
+	calls \
+	chatty \
+	eog \
+	firefox-esr \
+	gnome-calculator \
+	gnome-clocks \
+	gnome-contacts \
+	megapixels \
+	mobile-config-firefox \
+	portfolio \
+	postmarketos-welcome-gtk
 
-dnf autoremove -y
+apk del --purge
 
-dnf install -y				\
-	flatpak				\
-	mutter				\
-	gdm				\
-	gnome-shell			\
-	gnome-control-center
+apk add flatpak
 
 echo "Done! You should probably reboot so everything is in the right place."
-
-
