@@ -10,30 +10,30 @@ fi
 # Aliases
 
 # Dnf
-echo "alias i='sudo dnf install -y'" >> /home/arteeh/.bashrc
-echo "alias r='sudo dnf remove -y'" >> /home/arteeh/.bashrc
-echo "alias l='clear;dnf list --installed'" >> /home/arteeh/.bashrc
-echo "alias u='dnf check-update -y'" >> /home/arteeh/.bashrc
-echo "alias d='sudo dnf upgrade -y'" >> /home/arteeh/.bashrc
-echo "alias a='sudo dnf autoremove -y'" >> /home/arteeh/.bashrc
-echo "alias c='dnf clean all -y'" >> /home/arteeh/.bashrc
+echo "alias i='sudo dnf install -y'" >> /home/pine/.bashrc
+echo "alias r='sudo dnf remove -y'" >> /home/pine/.bashrc
+echo "alias l='clear;dnf list --installed'" >> /home/pine/.bashrc
+echo "alias u='dnf check-update -y'" >> /home/pine/.bashrc
+echo "alias d='sudo dnf upgrade -y'" >> /home/pine/.bashrc
+echo "alias a='sudo dnf autoremove -y'" >> /home/pine/.bashrc
+echo "alias c='dnf clean all -y'" >> /home/pine/.bashrc
 
 # Flatpak
-echo "alias fu='flatpak update -y'" >> /home/arteeh/.bashrc
-echo "alias fi='flatpak --user install -y'"  >> /home/arteeh/.bashrc
-echo "alias fr='flatpak remove -y --delete-data'"  >> /home/arteeh/.bashrc
-echo "alias fa='flatpak remove -y --unused --delete-data'"  >> /home/arteeh/.bashrc
-echo "alias fl='flatpak list'"  >> /home/arteeh/.bashrc
+echo "alias fu='flatpak update -y'" >> /home/pine/.bashrc
+echo "alias fi='flatpak --user install -y'"  >> /home/pine/.bashrc
+echo "alias fr='flatpak remove -y --delete-data'"  >> /home/pine/.bashrc
+echo "alias fa='flatpak remove -y --unused --delete-data'"  >> /home/pine/.bashrc
+echo "alias fl='flatpak list'"  >> /home/pine/.bashrc
 
 # Git
-echo "alias gs='git status'" >> /home/arteeh/.bashrc
-echo "alias ga='git add'" >> /home/arteeh/.bashrc
-echo "alias gc='git commit'" >> /home/arteeh/.bashrc
-echo "alias gp='git push'" >> /home/arteeh/.bashrc
-echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
+echo "alias gs='git status'" >> /home/pine/.bashrc
+echo "alias ga='git add'" >> /home/pine/.bashrc
+echo "alias gc='git commit'" >> /home/pine/.bashrc
+echo "alias gp='git push'" >> /home/pine/.bashrc
+echo "alias g='ga .;gc;gp'" >> /home/pine/.bashrc
 
 # Update everything
-echo "alias up='u;d;a;c;fu;fa'" >> /home/arteeh/.bashrc
+echo "alias up='u;d;a;c;fu;fa'" >> /home/pine/.bashrc
 
 # Git config
 git config --global user.name "Maarten de Jong"
