@@ -14,6 +14,7 @@ apk del --purge \
 	chatty \
 	eog \
 	firefox-esr \
+	gedit \
 	gnome-calculator \
 	gnome-clocks \
 	gnome-contacts \
