@@ -20,7 +20,7 @@ apk del --purge \
 	megapixels \
 	mobile-config-firefox \
 	portfolio \
-	postmarketos-welcome-gtk
+	postmarketos-welcome-gtk3
 
 apk del --purge
 
