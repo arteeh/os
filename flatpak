@@ -6,26 +6,26 @@ flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flath
 
 # Install my apps
 
-flatpak install --user flathub -y		\
-	com.belmoussaoui.Obfuscate		\
-	com.bitstower.Markets			\
-	com.discordapp.Discord			\
-	com.github.Eloston.UngoogledChromium	\
-	com.github.gi_lom.dialect		\
-	com.github.tchx84.Flatseal		\
-	com.github.unrud.VideoDownloader	\
-	de.haeckerfelix.Fragments		\
-	dev.tchx84.Portfolio			\
-	fr.romainvigier.MetadataCleaner		\
-	org.gabmus.whatip			\
-	org.gimp.GIMP				\
-	org.gnome.Calculator			\
-	org.gnome.Clocks			\
-	org.gnome.eog				\
-	org.gnome.Fractal			\
-	org.gnome.Geary				\
-	org.gnome.gedit				\
-	org.gnome.Totem				\
-	org.signal.Signal
+flatpak install --user flathub -y \
+com.belmoussaoui.Obfuscate \
+com.bitstower.Markets \
+com.discordapp.Discord \
+com.github.Eloston.UngoogledChromium \
+com.github.gi_lom.dialect \
+com.github.tchx84.Flatseal \
+com.github.unrud.VideoDownloader \
+de.haeckerfelix.Fragments \
+dev.tchx84.Portfolio \
+fr.romainvigier.MetadataCleaner \
+org.gabmus.whatip \
+org.gimp.GIMP \
+org.gnome.Calculator \
+org.gnome.Clocks \
+org.gnome.eog \
+org.gnome.Fractal \
+org.gnome.Geary \
+org.gnome.gedit \
+org.gnome.Totem \
+org.signal.Signal
 
 echo "Done! You should probably reboot so everything is in the right place."
