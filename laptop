@@ -30,9 +30,6 @@ echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
 # Update everything
 echo "alias up='u;c;fu;fa'" >> /home/arteeh/.bashrc
 
-# Install gnome-tweaks
-rpm-ostree install gnome-tweaks
-
 # Git config
 git config --global user.name "Maarten de Jong"
 git config --global user.email "accounts@arteeh.com"
