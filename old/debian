@@ -9,9 +9,8 @@ fi
 
 # Set up grub
 
-apt install -y imagemagick
+apt install -y imagemagick --no-install-recommends
 convert -size 1920x1080 xc:black bg.png
-apt purge -y imagemagick
 cp bg.png /boot/grub/
 rm bg.png
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
@@ -103,9 +102,9 @@ chown arteeh '/home/arteeh/Templates/Empty file'
 chmod +rw '/home/arteeh/Templates/Empty file'
 
 # Disable built in network so networkmanager can take control
-nano /etc/network/interfaces
 sed -i 's/allow-hotplug/#allow-hotplug/g' /etc/network/interfaces
 sed -i 's/iface enp1s0 inet dhcp/#iface enp1s0 inet dhcp/g' /etc/network/interfaces
+#nano /etc/network/interfaces
 
 # Remove the network manager "app"
 rm /usr/share/applications/nm-connection-editor.desktop
