@@ -27,7 +27,6 @@ org.gnome.Fractal \
 org.gnome.Geary \
 org.gnome.Totem \
 org.onlyoffice.desktopeditors \
-org.qbittorrent.qBittorrent \
 org.signal.Signal
 
 echo "Done! You should probably reboot so everything is in the right place."
