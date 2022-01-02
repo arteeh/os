@@ -81,7 +81,7 @@ apt purge -y \
 	baobab \
 	evince \
 	totem \
-  gedit \
+	gedit \
 	gnome-calculator \
 	gnome-characters \
 	gnome-contacts \
@@ -106,5 +106,8 @@ chmod +rw '/home/arteeh/Templates/Empty file'
 nano /etc/network/interfaces
 sed -i 's/allow-hotplug/#allow-hotplug/g' /etc/network/interfaces
 sed -i 's/iface enp1s0 inet dhcp/#iface enp1s0 inet dhcp/g' /etc/network/interfaces
+
+# Remove the network manager "app"
+rm /usr/share/applications/nm-connection-editor.desktop
 
 echo "Done! You should probably reboot so everything is in the right place."
