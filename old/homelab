@@ -42,7 +42,7 @@ apt clean
 apt install -y \
 	openssh-server \
 	ufw \
-	docker \
+	docker.io \
 	docker-compose
 
 apt purge -y \
