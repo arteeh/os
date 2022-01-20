@@ -59,7 +59,14 @@ apt install -y \
 	firmware-iwlwifi \
 	plymouth \
 	plymouth-themes \
-	gnome-core \
+	gdm3 \
+	gnome-shell \
+	gnome-terminal \
+	nautilus \
+	gnome-control-center \
+	gnome-online-accounts \
+	gnome-system-monitor \
+	pipewire-pulse \
 	fonts-noto \
 	flatpak
 
@@ -103,6 +110,7 @@ chmod +rw '/home/arteeh/Templates/Empty file'
 
 # Disable built in network so networkmanager can take control
 sed -i 's/allow-hotplug/#allow-hotplug/g' /etc/network/interfaces
+sed -i 's/iface eth0 inet dhcp/#iface eth0 inet dhcp/g' /etc/network/interfaces
 sed -i 's/iface enp1s0 inet dhcp/#iface enp1s0 inet dhcp/g' /etc/network/interfaces
 #nano /etc/network/interfaces
 
