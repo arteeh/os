@@ -44,21 +44,22 @@ apt clean
 
 apt purge -y \
 	baobab \
-  chatty \
+	chatty \
 	eog \
 	epiphany-browser \
 	evince \
 	file-roller \
 	firefox-esr* \
-  flashlight \
+	flashlight \
 	fractal \
 	fwupd \
 	geary \
+	gedit \
 	gnome-2048 \
 	gnome-authenticator \
 	gnome-calculator \
 	gnome-calendar \
-  gnome-calls \
+	gnome-calls \
 	gnome-characters \
 	gnome-chess \
 	gnome-clocks \
@@ -77,13 +78,15 @@ apt purge -y \
 	gnome-tweaks \
 	gnome-usage \
 	gnome-weather \
-	imagemagick \
 	im-config \
+	imagemagick \
 	lollypop \
 	malcontent \
+	megapixels \
 	needrestart \
 	nemo \
 	popularity-contest \
+	portfolio-filemanager \
 	powersupply \
 	system-config-printer \
 	telegram* \
@@ -95,6 +98,9 @@ apt purge -y \
 	youtube-dl
 
 apt autoremove --purge -y
+
+# Remove the network manager "app"
+rm /usr/share/applications/nm-connection-editor.desktop
 
 # Add the empty file template
 touch '/home/arteeh/Templates/Empty file'
