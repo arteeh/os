@@ -11,7 +11,7 @@ fi
 
 # Rpm-ostree
 echo "alias u='rpm-ostree upgrade'" >> /home/arteeh/.bashrc
-echo "alias c='rpm-ostree cleanup -brm'" >> /home/arteeh/.bashrc
+echo "alias c='rpm-ostree cleanup -bprm'" >> /home/arteeh/.bashrc
 
 # Flatpak
 echo "alias fu='flatpak update -y'" >> /home/arteeh/.bashrc
@@ -28,7 +28,7 @@ echo "alias gp='git push'" >> /home/arteeh/.bashrc
 echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
 
 # Update everything
-echo "alias up='u;c;fu;fa'" >> /home/arteeh/.bashrc
+echo "alias up='u;fu'" >> /home/arteeh/.bashrc
 
 # Git config
 git config --global user.name "Maarten de Jong"
@@ -43,6 +43,7 @@ flatpak remove -y --delete-data		\
 	org.gnome.Characters		\
 	org.gnome.clocks		\
 	org.gnome.Contacts		\
+	org.gnome.Connections		\
 	org.gnome.eog			\
 	org.gnome.Evince		\
 	org.gnome.FileRoller		\
@@ -53,11 +54,13 @@ flatpak remove -y --delete-data		\
 	org.gnome.NautilusPreviewer	\
 	org.gnome.Screenshot		\
 	org.gnome.Weather		\
+	org.fedoraproject.MediaWriter	\
 	org.fedoraproject.Platform
 
 flatpak remove -y --unused --delete-data
 
 flatpak remote-delete fedora
+flatpak remote-delete flathub
 
 # Add the empty file template
 touch '/home/arteeh/Templates/Empty file'
@@ -65,5 +68,3 @@ chown arteeh '/home/arteeh/Templates/Empty file'
 chmod +rw '/home/arteeh/Templates/Empty file'
 
 echo "Done! You should probably reboot so everything is in the right place."
-
-
