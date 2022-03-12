@@ -3,29 +3,36 @@
 # Add the flathub.org repositoriy
 
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak remote-add --user --if-not-exists fedora oci+https://registry.fedoraproject.org
 
 # Install my apps
 
 flatpak install --user flathub -y \
-com.github.Eloston.UngoogledChromium
-
-flatpak install --user fedora -y \
-org.gnome.Screenshot
-
-flatpak install --user flathub -y \
+com.belmoussaoui.Obfuscate \
+com.bitstower.Markets \
 com.bitwarden.desktop \
 com.discordapp.Discord \
+com.github.Eloston.UngoogledChromium \
+com.github.gi_lom.dialect \
+com.github.tchx84.Flatseal \
+com.github.unrud.VideoDownloader \
+com.heroicgameslauncher.hgl \
 com.mattjakeman.ExtensionManager \
+com.uploadedlobster.peek \
+com.valvesoftware.Steam \
+de.haeckerfelix.Fragments \
+dev.tchx84.Portfolio \
+fr.romainvigier.MetadataCleaner \
 io.github.shiftey.Desktop \
+org.gabmus.whatip \
 org.gimp.GIMP \
 org.gnome.Calculator \
-org.gnome.clocks \
-org.gnome.eog \
+org.gnome.Clocks \
 org.gnome.Fractal \
 org.gnome.Geary \
-org.gnome.gedit \
 org.gnome.Totem \
+org.gnome.clocks \
+org.gnome.eog \
+org.gnome.gedit \
 org.onlyoffice.desktopeditors \
 org.signal.Signal \
 re.sonny.Commit
