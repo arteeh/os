@@ -7,11 +7,6 @@ if [ "$EUID" -ne 0 ]
 	exit
 fi
 
-# Git config
-
-git config --global user.name "Maarten de Jong"
-git config --global user.email "accounts@arteeh.com"
-
 # Aliases
 
 # Apt
@@ -74,5 +69,10 @@ ufw allow 443
 # Allow port 8332 and 8333 for Bitcoin
 ufw allow 8332
 ufw allow 8333
+
+# Git config
+
+git config --global user.name "Maarten de Jong"
+git config --global user.email "accounts@arteeh.com"
 
 echo "Done! You should probably reboot so everything is in the right place."
