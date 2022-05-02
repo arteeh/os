@@ -7,6 +7,11 @@ if [ "$EUID" -ne 0 ]
 	exit
 fi
 
+# Git config
+
+git config --global user.name "Maarten de Jong"
+git config --global user.email "accounts@arteeh.com"
+
 # Aliases
 
 # Apt
@@ -28,9 +33,8 @@ echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
 # Update everything
 echo "alias up='u;d;a;c'" >> /home/arteeh/.bashrc
 
-# Git config
-git config --global user.name "Maarten de Jong"
-git config --global user.email "accounts@arteeh.com"
+# Upgrade to unstable
+echo "deb http://deb.debian.org/debian/ unstable main contrib non-free" > /etc/apt/sources.list
 
 apt update
 apt dist-upgrade -y
