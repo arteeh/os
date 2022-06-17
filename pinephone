@@ -51,23 +51,38 @@ git config --global user.email "accounts@arteeh.com"
 
 apt purge -y				\
 	arm-image-installer		\
-	calls				\
 	chatty				\
-	epiphany			\
-	evolution			\
-	evolution-langpacks		\
-	evolution-data-server		\
-	evolution-data-server-langpacks	\
+	evince				\
+	epiphany-browser		\
+	eog				\
 	firefox				\
+	firefox-esr			\
+	geary				\
+	gedit				\
+	gnome-calculator		\
+	gnome-calendar			\
+	gnome-calls			\
+	gnome-clocks			\
 	gnome-contacts			\
+	gnome-maps			\
+	gnome-software*			\
+	gnome-todo			\
 	gnome-power-manager		\
 	gnome-system-monitor		\
+	gnome-sound-recorder		\
+	gnome-console			\
 	gnome-usage			\
+	gnome-weather			\
 	initial-setup			\
+	imagemagick			\
+	lollypop			\
 	megapixels			\
+	portfolio-filemanager		\
 	nautilus			\
 	vim-minimal			\
+	totem				\
 	popularity-contest		\
+	powersupply			\
 	vim-common			\
 	vim-tiny			\
 	needrestart
@@ -80,6 +95,7 @@ apt install -y				\
 	phosh				\
 	gdm				\
 	gnome-shell			\
-	gnome-control-center
+	gnome-control-center		\
+	gnome-console
 
 echo "Done! You should probably reboot so everything is in the right place."
