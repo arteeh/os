@@ -3,8 +3,8 @@
 # Root check
 
 if [ "$EUID" -ne 0 ]
-	then echo "Please run this command as root"
-	exit
+ then echo "Please run this command as root"
+ exit
 fi
 
 # Aliases
@@ -37,65 +37,84 @@ echo "alias up='u;d;a;c;fu;fa'" >> /home/arteeh/.bashrc
 
 # Upgrade to unstable
 echo "deb http://deb.debian.org/debian/ unstable main contrib non-free" > /etc/apt/sources.list
+echo "deb http://repo.mobian.org/ unstable main non-free" > /etc/apt/sources.list.d/mobian.list
 
 apt update
 apt dist-upgrade -y
 apt autoremove --purge -y
 apt clean
 
-# Git config
-git config --global user.name "Maarten de Jong"
-git config --global user.email "accounts@arteeh.com"
-
 # Remove packages
 
-apt purge -y				\
-	arm-image-installer		\
-	chatty				\
-	evince				\
-	epiphany-browser		\
-	eog				\
-	firefox				\
-	firefox-esr			\
-	geary				\
-	gedit				\
-	gnome-calculator		\
-	gnome-calendar			\
-	gnome-calls			\
-	gnome-clocks			\
-	gnome-contacts			\
-	gnome-maps			\
-	gnome-software*			\
-	gnome-todo			\
-	gnome-power-manager		\
-	gnome-system-monitor		\
-	gnome-sound-recorder		\
-	gnome-console			\
-	gnome-usage			\
-	gnome-weather			\
-	initial-setup			\
-	imagemagick			\
-	lollypop			\
-	megapixels			\
-	portfolio-filemanager		\
-	nautilus			\
-	vim-minimal			\
-	totem				\
-	popularity-contest		\
-	powersupply			\
-	vim-common			\
-	vim-tiny			\
-	needrestart
+apt purge -y \
+baobab \
+chatty \
+eog \
+epiphany-browser \
+evince \
+file-roller \
+firefox* \
+flashlight \
+fractal \
+fwupd \
+geary \
+gedit \
+gnome-2048 \
+gnome-authenticator \
+gnome-calculator \
+gnome-calendar \
+gnome-calls \
+gnome-characters \
+gnome-chess \
+gnome-clocks \
+gnome-contacts \
+gnome-disk-utility \
+gnome-font-viewer \
+gnome-initial-setup \
+gnome-logs \
+gnome-maps \
+gnome-power-manager \
+gnome-shell-extension* \
+gnome-software* \
+gnome-sound-recorder \
+gnome-sushi \
+gnome-system-monitor \
+gnome-todo \
+gnome-tweaks \
+gnome-usage \
+gnome-weather \
+im-config \
+imagemagick \
+lollypop \
+malcontent \
+megapixels \
+nautilus \
+needrestart \
+nemo \
+popularity-contest \
+portfolio-filemanager \
+powersupply \
+system-config-printer \
+telegram* \
+termit \
+totem \
+vim* \
+webext* \
+yelp \
+youtube-dl
 
 apt autoremove --purge -y
 
-apt install -y				\
-	flatpak				\
-	mutter				\
-	phosh				\
-	gdm				\
-	gnome-shell			\
-	gnome-control-center		\
-	gnome-console
+# Remove the network manager "app"
+rm /usr/share/applications/nm-connection-editor.desktop
+
+apt install -y \
+flatpak \
+mutter \
+phosh \
+gdm3 \
+gnome-shell \
+gnome-control-center \
+gnome-console
 
 echo "Done! You should probably reboot so everything is in the right place."
