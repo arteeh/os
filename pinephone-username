@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# A script to change the current username
+
+set -e
+
+# Get current username
+printf "\nType the current username:\n"
+read old
+
+# Set desired username
+printf "\nType the desired username:\n"
+read new
+
+# Home paths
+ohp="home/$old"
+nhp="home/$new"
+
+# Change username
+printf "\nChanging username\n"
+
+for file in group gshadow passwd shadow subgid subuid
+do
+    sed -i "s/$old/$new/g" /etc/$file*
+done
+
+# Rename home folder
+mv /$ohp /$nhp
+
+# Fix path references in /home for new user
+printf "\nAdjusting paths in home directory\n"
+
+grep -rl "$ohp" /$nhp | xargs sed -i "s+$ohp+$nhp+g"
+
+# Set user info
+echo
+chfn $new
+sync
+
+reboot
