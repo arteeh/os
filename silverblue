@@ -30,11 +30,9 @@ echo "alias g='ga .;gc;gp'" >> /home/arteeh/.bashrc
 # Update everything
 echo "alias up='u;fu'" >> /home/arteeh/.bashrc
 
-# Git config
-git config --global user.name "Maarten de Jong"
-git config --global user.email "accounts@arteeh.com"
-
 # Remove default apps installed to system
+
+rpm-ostree override remove firefox gnome-tour gnome-software gnome-software-rpm-ostree yelp 
 
 flatpak remove -y --delete-data		\
 	org.gnome.Calculator		\
@@ -61,10 +59,5 @@ flatpak remove -y --unused --delete-data
 
 flatpak remote-delete fedora
 flatpak remote-delete flathub
-
-# Add the empty file template
-touch '/home/arteeh/Templates/Empty file'
-chown arteeh '/home/arteeh/Templates/Empty file'
-chmod +rw '/home/arteeh/Templates/Empty file'
 
 echo "Done! You should probably reboot so everything is in the right place."
