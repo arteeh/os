@@ -31,7 +31,7 @@ systemctl enable rpm-ostreed-automatic.timer --now
 
 # Remove default apps installed to system
 
-rpm-ostree override remove firefox gnome-tour gnome-software gnome-software-rpm-ostree yelp 
+rpm-ostree override remove firefox firefox-langpacks gnome-tour gnome-software gnome-software-rpm-ostree yelp 
 
 flatpak remove -y --delete-data \
 org.fedoraproject.MediaWriter \
