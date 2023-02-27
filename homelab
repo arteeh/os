@@ -7,20 +7,6 @@ if [ "$EUID" -ne 0 ]
 	exit
 fi
 
-# Aliases
-
-# Apt
-echo "alias i='sudo apt install -y'" >> /home/arteeh/.bashrc
-echo "alias r='sudo apt purge -y'" >> /home/arteeh/.bashrc
-echo "alias l='clear;apt list --installed'" >> /home/arteeh/.bashrc
-echo "alias u='sudo apt update'" >> /home/arteeh/.bashrc
-echo "alias d='sudo apt dist-upgrade -y'" >> /home/arteeh/.bashrc
-echo "alias a='sudo apt autoremove --purge -y'" >> /home/arteeh/.bashrc
-echo "alias c='sudo apt clean'" >> /home/arteeh/.bashrc
-
-# Update everything
-echo "alias up='u;d;a;c'" >> /home/arteeh/.bashrc
-
 # Upgrade to testing
 echo "deb http://deb.debian.org/debian/ testing main contrib non-free" > /etc/apt/sources.list
 
@@ -58,6 +44,12 @@ ufw allow 81
 
 # Allow port 80 for HTTP (this is only needed for NPM's certbot to work)
 ufw allow 80
+
+# Various ports for Samba
+ufw allow 137
+ufw allow 138
+ufw allow 139
+ufw allow 445
 
 # Allow port 443 for HTTPS
 ufw allow 443
