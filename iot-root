@@ -9,13 +9,13 @@ fi
 # Set hostname
 hostnamectl set-hostname rock
 
+# Add docker repo
+curl https://download.docker.com/linux/fedora/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
+
 # Install packages
-rpm-ostree install			\
-	cockpit-system			\
-	cockpit-ostree			\
-	cockpit-podman			\
-	cockpit-navigator		\
-	cockpit-file-sharing
+rpm-ostree install	\
+	docker-ce	\
+	docker-compose
 
 # Configure the firewall
 firewall-cmd --add-service=cockpit --permanent
