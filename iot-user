@@ -5,3 +5,7 @@ mkdir /home/arteeh/cf
 mkdir /home/arteeh/cf/build
 curl https://raw.githubusercontent.com/angristan/docker-pleroma/master/config.exs -O /home/arteeh/cf/build/config.exs
 curl https://raw.githubusercontent.com/angristan/docker-pleroma/master/Dockerfile -O /home/arteeh/cf/build/Dockerfile
+
+mkdir /home/arteeh/files
+touch /home/arteeh/files/filebrowser.db
+cp settings.json /home/arteeh/files/settings.json
