@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Root check
+if [ "$EUID" -ne 0 ]
+	then echo "Please run this command as root"
+	exit
+fi
+
+# Set hostname
+hostnamectl set-hostname rock
+
+# Install packages
+rpm-ostree install			\
+	cockpit-system			\
+	cockpit-ostree			\
+	cockpit-podman			\
+	cockpit-navigator		\
+	cockpit-file-sharing	\
+	git						\
+
+# Configure the firewall
+firewall-cmd --add-service=cockpit --permanent
+firewall-cmd --add-service=http --permanent
+firewall-cmd --add-service=https --permanent
+firewall-cmd --add-service=ssh --permanent
+firewall-cmd --add-service=samba --permanent
+firewall-cmd --add-port=81 --permanent
