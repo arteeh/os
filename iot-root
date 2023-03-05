@@ -15,8 +15,7 @@ rpm-ostree install			\
 	cockpit-ostree			\
 	cockpit-podman			\
 	cockpit-navigator		\
-	cockpit-file-sharing	\
-	git						\
+	cockpit-file-sharing
 
 # Configure the firewall
 firewall-cmd --add-service=cockpit --permanent
@@ -24,4 +23,4 @@ firewall-cmd --add-service=http --permanent
 firewall-cmd --add-service=https --permanent
 firewall-cmd --add-service=ssh --permanent
 firewall-cmd --add-service=samba --permanent
-firewall-cmd --add-port=81 --permanent
+firewall-cmd --add-port=81/tcp --permanent
