@@ -18,9 +18,7 @@ rpm-ostree install	\
 	docker-compose
 
 # Configure the firewall
-firewall-cmd --add-service=cockpit --permanent
 firewall-cmd --add-service=http --permanent
 firewall-cmd --add-service=https --permanent
 firewall-cmd --add-service=ssh --permanent
-firewall-cmd --add-service=samba --permanent
 firewall-cmd --add-port=81/tcp --permanent
