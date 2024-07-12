@@ -3,7 +3,7 @@ version: 1.5.0
 passwd:
   users:
     - name: arteeh
-      password_hash: $y$j9T$5FWNGJZYcVE1a0jJlKli8.$PSHsZ2aFNJS/RabZmuNDWKgfIQcNMy9YqLAzLLkHl22
+      password_hash: nope
 storage:
   files:
     - path: /etc/ssh/sshd_config.d/20-enable-passwords.conf
