@@ -1,0 +1,2 @@
+sudo apt install gnome-session gdm3 gnome-control-center nautilus gnome-software-plugin-flatpak
+flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
