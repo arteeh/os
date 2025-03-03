@@ -1,0 +1,50 @@
+#/bin/bash
+
+# Remove Fedora remote
+sudo flatpak remote-delete fedora
+
+# Add Flathub remote
+flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Essential
+flatpak install -y com.bitwarden.desktop
+flatpak install -y com.brave.Browser
+flatpak install -y org.gnome.Loupe
+flatpak install -y org.gnome.TextEditor
+flatpak install -y io.github.celluloid_player.Celluloid
+flatpak install -y org.gnome.Calculator
+flatpak install -y org.gnome.clocks
+flatpak install -y org.gnome.Weather
+
+# Utilities
+flatpak install -y com.github.tchx84.Flatseal
+flatpak install -y com.mattjakeman.ExtensionManager
+flatpak install -y io.missioncenter.MissionCenter
+flatpak install -y ca.desrt.dconf-editor
+flatpak install -y io.github.shiftey.Desktop
+flatpak install -y org.gnome.NautilusPreviewer
+
+# Social
+flatpak install -y org.signal.Signal
+flatpak install -y dev.vencord.Vesktop
+
+# Media
+flatpak install -y com.github.unrud.VideoDownloader
+flatpak install -y com.github.iwalton3.jellyfin-media-player
+flatpak install -y com.moonlight_stream.Moonlight
+flatpak install -y org.gimp.GIMP
+flatpak install -y org.onlyoffice.desktopeditors
+flatpak install -y com.obsproject.Studio
+flatpak install -y com.obsproject.Studio.Plugin.OBSVkCapture
+flatpak install -y com.obsproject.Studio.Plugin.Gstreamer
+flatpak install -y com.obsproject.Studio.Plugin.GStreamerVaapi
+
+# Gaming
+flatpak install -y com.valvesoftware.Steam
+flatpak install -y org.freedesktop.Platform.VulkanLayer.gamescope
+flatpak install -y com.heroicgameslauncher.hgl
+flatpak install -y org.prismlauncher.PrismLauncher
+
+# Logitech
+flatpak install -y io.github.pwr_solaar.solaar
+
