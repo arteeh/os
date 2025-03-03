@@ -41,6 +41,7 @@ flatpak install -y com.obsproject.Studio.Plugin.GStreamerVaapi
 
 # Gaming
 flatpak install -y com.valvesoftware.Steam
+flatpak install -y com.valvesoftware.Steam.CompatibilityTool.Proton-GE
 flatpak install -y org.freedesktop.Platform.VulkanLayer.gamescope
 flatpak install -y com.heroicgameslauncher.hgl
 flatpak install -y org.prismlauncher.PrismLauncher
