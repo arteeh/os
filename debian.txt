@@ -1,4 +1,4 @@
 sudo apt install gnome-session gdm3 gnome-control-center nautilus gnome-software-plugin-flatpak gnome-software-plugin-fwupd --no-install-recommends
-sudo apt install firmware-linux ca-certificates network-manager plymouth-themes
+sudo apt install firmware-linux ca-certificates network-manager plymouth-themes unzip
 flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 sudo systemctl enable gdm3 --now
