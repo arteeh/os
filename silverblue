@@ -1,8 +1,2 @@
 sudo ostree remote add tailscale https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-
-rpm-ostree install \
-	tailscale \
-	distrobox \
-	containerd \	
-	docker-cli \
-	docker-compose
+rpm-ostree install tailscale distrobox containerd docker-cli docker-compose
