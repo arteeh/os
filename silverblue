@@ -1,32 +1,8 @@
-rpm-ostree override remove \
-	gnome-classic-session \
-	gnome-classic-session-xsession \
-	gnome-system-monitor \
-	gnome-tweaks \
-	gnome-tour \
-	gnome-shell-extension-apps-menu \
-	gnome-shell-extension-background-logo \
-	gnome-shell-extension-launch-new-instance \
-	gnome-shell-extension-places-menu \
-	gnome-shell-extension-window-list \
-	yelp \
-	firefox \
-	firefox-langpacks \
-	nvtop \
-	htop
-
-curl -Lo /etc/yum.repos.d/docker-ce.repo https://download.docker.com/linux/fedora/docker-ce.repo
-curl -Lo /etc/yum.repos.d/tailscale.repo https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+sudo ostree remote add tailscale https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 
 rpm-ostree install \
 	tailscale \
-	docker-ce \
-	docker-ce-cli \
-	containerd.io \
-	docker-buildx-plugin \
-	docker-compose-plugin
-
-flatpak remote-delete flathub
-flatpak remote-delete fedora
-flatpak remote-delete fedora-testing
-flatpak remote-add --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+	distrobox \
+	containerd \	
+	docker-cli \
+	docker-compose
